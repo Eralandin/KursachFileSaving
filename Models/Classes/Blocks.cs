@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KursachFileSaving.Models.Classes
 {
-    internal class Blocks
+    public class Blocks
     {
         public int BlockCode {  get; set; }
         public string Motherboard { get; set; }

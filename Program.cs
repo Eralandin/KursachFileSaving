@@ -1,8 +1,12 @@
-﻿using System;
+﻿using KursachFileSaving.View.Forms;
+using KursachFileSaving.View.Forms.WorkTypesForms;
+using KursachFileSaving.View.Forms.JobsControlForms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace KursachFileSaving
 {
@@ -16,7 +20,7 @@ namespace KursachFileSaving
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ());
+            Application.Run(new MainForm());
         }
     }
 }

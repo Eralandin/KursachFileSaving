@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KursachFileSaving.Models.Classes
 {
-    internal class Apps
+    public class Apps
     {
         public int AppCode {  get; set; }
         public string AppComment { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KursachFileSaving.Models.Classes
 {
-    internal class Jobs
+    public class Jobs
     {
         public int JobCode { get; set; }
         public string JobName { get; set; }

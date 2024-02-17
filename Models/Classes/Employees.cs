@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KursachFileSaving.Models.Classes
 {
-    internal class Employees
+    public class Employees
     {
         public int EmpCode {  get; set; }
         public int BlockCode { get; set; } = 0;
