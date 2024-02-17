@@ -59,12 +59,16 @@
     <Compile Include="Models\Interfaces\IJobsControlModuleView.cs" />
     <Compile Include="Models\Interfaces\IJobsControlView.cs" />
     <Compile Include="Models\Interfaces\IMainFormView.cs" />
+    <Compile Include="Models\Interfaces\IPOModuleView.cs" />
+    <Compile Include="Models\Interfaces\IPOView.cs" />
     <Compile Include="Models\Interfaces\IWTMView.cs" />
     <Compile Include="Models\Interfaces\IWTView.cs" />
     <Compile Include="Models\Interfaces\JsonFileManager.cs" />
     <Compile Include="Presenter\JobControlPresenter.cs" />
     <Compile Include="Presenter\JobsControlModulePresenter.cs" />
     <Compile Include="Presenter\MainFormPresenter.cs" />
+    <Compile Include="Presenter\POCMPresenter.cs" />
+    <Compile Include="Presenter\POPresenter.cs" />
     <Compile Include="Presenter\WTMPresenter.cs" />
     <Compile Include="Presenter\WTPresenter.cs" />
     <Compile Include="Program.cs" />
@@ -86,6 +90,18 @@
     </Compile>
     <Compile Include="View\Forms\MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\POControlForms\POCM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\POControlForms\POCM.Designer.cs">
+      <DependentUpon>POCM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\POControlForms\POControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\POControlForms\POControl.Designer.cs">
+      <DependentUpon>POControl.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\WorkTypesForms\WTCModule.cs">
       <SubType>Form</SubType>
@@ -123,6 +139,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\POControlForms\POCM.resx">
+      <DependentUpon>POCM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\POControlForms\POControl.resx">
+      <DependentUpon>POControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\WorkTypesForms\WTCModule.resx">
       <DependentUpon>WTCModule.cs</DependentUpon>

@@ -9,7 +9,7 @@ namespace KursachFileSaving.Models.Classes
     public class PO
     {
         public int POCode {  get; set; }
-        public int BlockCode { get; set; }
+        public int BlockCode { get; set; } = 0;
         public string POName { get; set; }
     }
 }

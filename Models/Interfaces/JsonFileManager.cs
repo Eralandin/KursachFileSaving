@@ -85,6 +85,12 @@ namespace KursachFileSaving.Models.Interfaces
             workTypesModel = wtslist;
             SaveData(apps, blocks, employees, jobs, journal, po, workTypesModel);
         }
+        public static void SavePOs(List<PO> polist, string filePath)
+        {
+            var (apps, blocks, employees, jobs, journal, po, workTypesModel) = LoadData();
+            po = polist;
+            SaveData(apps, blocks, employees, jobs, journal, po, workTypesModel);
+        }
         public static void InitializeDataIfFileNotExists()
         {
             // Инициализация всех списков данных

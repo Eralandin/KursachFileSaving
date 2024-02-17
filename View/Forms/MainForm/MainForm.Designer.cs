@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -36,14 +37,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.EFYTopMainLabel = new System.Windows.Forms.Label();
-            this.NSTUMainLabel = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.NSTUMainLogo = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ExitMainButton = new System.Windows.Forms.PictureBox();
             this.MainFormMinimize = new System.Windows.Forms.PictureBox();
             this.MainFormClose = new System.Windows.Forms.PictureBox();
+            this.EFYTopMainLabel = new System.Windows.Forms.Label();
             this.JournalMainButton = new KursachFileSaving.View.Parts.CustomerButton();
             this.AppsMainButton = new KursachFileSaving.View.Parts.CustomerButton();
             this.EmployeesMainButton = new KursachFileSaving.View.Parts.CustomerButton();
@@ -51,9 +48,10 @@
             this.POsMainButton = new KursachFileSaving.View.Parts.CustomerButton();
             this.WorkTypesMainButton = new KursachFileSaving.View.Parts.CustomerButton();
             this.JobsMainButton = new KursachFileSaving.View.Parts.CustomerButton();
+            this.NSTUMainLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.NSTUMainLogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NSTUMainLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitMainButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainFormMinimize)).BeginInit();
@@ -65,6 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.POsMainButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkTypesMainButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JobsMainButton)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NSTUMainLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,6 +94,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1050, 150);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::KursachFileSaving.Properties.Resources.Логотип_НГТУ_НЭТИ1;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
             // 
             // label7
             // 
@@ -172,58 +182,6 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Типы работ";
             // 
-            // EFYTopMainLabel
-            // 
-            this.EFYTopMainLabel.AutoSize = true;
-            this.EFYTopMainLabel.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EFYTopMainLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.EFYTopMainLabel.Location = new System.Drawing.Point(433, 9);
-            this.EFYTopMainLabel.Name = "EFYTopMainLabel";
-            this.EFYTopMainLabel.Size = new System.Drawing.Size(212, 25);
-            this.EFYTopMainLabel.TabIndex = 26;
-            this.EFYTopMainLabel.Text = "EFY\'s Sysadmin ARM";
-            // 
-            // NSTUMainLabel
-            // 
-            this.NSTUMainLabel.AutoSize = true;
-            this.NSTUMainLabel.Font = new System.Drawing.Font("Bahnschrift", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NSTUMainLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.NSTUMainLabel.Location = new System.Drawing.Point(527, 337);
-            this.NSTUMainLabel.Name = "NSTUMainLabel";
-            this.NSTUMainLabel.Size = new System.Drawing.Size(142, 39);
-            this.NSTUMainLabel.TabIndex = 25;
-            this.NSTUMainLabel.Text = "It works.";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.NSTUMainLabel);
-            this.panel2.Controls.Add(this.NSTUMainLogo);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 150);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1050, 550);
-            this.panel2.TabIndex = 28;
-            // 
-            // NSTUMainLogo
-            // 
-            this.NSTUMainLogo.Image = global::KursachFileSaving.Properties.Resources.Логотип_НГТУ_НЭТИ;
-            this.NSTUMainLogo.Location = new System.Drawing.Point(280, 138);
-            this.NSTUMainLogo.Name = "NSTUMainLogo";
-            this.NSTUMainLogo.Size = new System.Drawing.Size(501, 255);
-            this.NSTUMainLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.NSTUMainLogo.TabIndex = 7;
-            this.NSTUMainLogo.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::KursachFileSaving.Properties.Resources.Логотип_НГТУ_НЭТИ1;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
             // ExitMainButton
             // 
             this.ExitMainButton.Image = global::KursachFileSaving.Properties.Resources.exit;
@@ -255,6 +213,17 @@
             this.MainFormClose.TabIndex = 26;
             this.MainFormClose.TabStop = false;
             this.MainFormClose.Click += new System.EventHandler(this.MainFormClose_Click);
+            // 
+            // EFYTopMainLabel
+            // 
+            this.EFYTopMainLabel.AutoSize = true;
+            this.EFYTopMainLabel.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EFYTopMainLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.EFYTopMainLabel.Location = new System.Drawing.Point(433, 9);
+            this.EFYTopMainLabel.Name = "EFYTopMainLabel";
+            this.EFYTopMainLabel.Size = new System.Drawing.Size(212, 25);
+            this.EFYTopMainLabel.TabIndex = 26;
+            this.EFYTopMainLabel.Text = "EFY\'s Sysadmin ARM";
             // 
             // JournalMainButton
             // 
@@ -320,6 +289,7 @@
             this.POsMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.POsMainButton.TabIndex = 4;
             this.POsMainButton.TabStop = false;
+            this.POsMainButton.Click += new System.EventHandler(this.POsMainButton_Click);
             // 
             // WorkTypesMainButton
             // 
@@ -349,6 +319,37 @@
             this.JobsMainButton.TabStop = false;
             this.JobsMainButton.Click += new System.EventHandler(this.JobsMainButton_Click);
             // 
+            // NSTUMainLabel
+            // 
+            this.NSTUMainLabel.AutoSize = true;
+            this.NSTUMainLabel.Font = new System.Drawing.Font("Bahnschrift", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NSTUMainLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.NSTUMainLabel.Location = new System.Drawing.Point(527, 337);
+            this.NSTUMainLabel.Name = "NSTUMainLabel";
+            this.NSTUMainLabel.Size = new System.Drawing.Size(142, 39);
+            this.NSTUMainLabel.TabIndex = 25;
+            this.NSTUMainLabel.Text = "It works.";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.NSTUMainLabel);
+            this.panel2.Controls.Add(this.NSTUMainLogo);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 150);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1050, 550);
+            this.panel2.TabIndex = 28;
+            // 
+            // NSTUMainLogo
+            // 
+            this.NSTUMainLogo.Image = global::KursachFileSaving.Properties.Resources.Логотип_НГТУ_НЭТИ;
+            this.NSTUMainLogo.Location = new System.Drawing.Point(280, 138);
+            this.NSTUMainLogo.Name = "NSTUMainLogo";
+            this.NSTUMainLogo.Size = new System.Drawing.Size(501, 255);
+            this.NSTUMainLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.NSTUMainLogo.TabIndex = 7;
+            this.NSTUMainLogo.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,15 +357,13 @@
             this.ClientSize = new System.Drawing.Size(1050, 700);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NSTUMainLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitMainButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainFormMinimize)).EndInit();
@@ -376,6 +375,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.POsMainButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkTypesMainButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.JobsMainButton)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NSTUMainLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
