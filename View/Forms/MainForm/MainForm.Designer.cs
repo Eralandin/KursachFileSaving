@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.EFYTopMainLabel = new System.Windows.Forms.Label();
             this.NSTUMainLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.NSTUMainLogo = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ExitMainButton = new System.Windows.Forms.PictureBox();
             this.MainFormMinimize = new System.Windows.Forms.PictureBox();
             this.MainFormClose = new System.Windows.Forms.PictureBox();
@@ -50,10 +51,10 @@
             this.POsMainButton = new KursachFileSaving.View.Parts.CustomerButton();
             this.WorkTypesMainButton = new KursachFileSaving.View.Parts.CustomerButton();
             this.JobsMainButton = new KursachFileSaving.View.Parts.CustomerButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NSTUMainLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitMainButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainFormMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainFormClose)).BeginInit();
@@ -64,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.POsMainButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkTypesMainButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JobsMainButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,6 +94,83 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1050, 150);
             this.panel1.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Location = new System.Drawing.Point(920, 108);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 25);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Журнал";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(776, 108);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 25);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Заявки";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(609, 108);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(127, 25);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Сотрудники";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(462, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(119, 25);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Должности";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(340, 108);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 25);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Блоки";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.Location = new System.Drawing.Point(210, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 25);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "ПО";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(24, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 25);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Типы работ";
             // 
             // EFYTopMainLabel
             // 
@@ -127,83 +204,6 @@
             this.panel2.Size = new System.Drawing.Size(1050, 550);
             this.panel2.TabIndex = 28;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(24, 108);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 25);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Типы работ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(210, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 25);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "ПО";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(340, 108);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 25);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Блоки";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(462, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 25);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Должности";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(609, 108);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 25);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "Сотрудники";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(776, 108);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 25);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Заявки";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label7.Location = new System.Drawing.Point(920, 108);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 25);
-            this.label7.TabIndex = 33;
-            this.label7.Text = "Журнал";
-            // 
             // NSTUMainLogo
             // 
             this.NSTUMainLogo.Image = global::KursachFileSaving.Properties.Resources.Логотип_НГТУ_НЭТИ;
@@ -213,6 +213,16 @@
             this.NSTUMainLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.NSTUMainLogo.TabIndex = 7;
             this.NSTUMainLogo.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::KursachFileSaving.Properties.Resources.Логотип_НГТУ_НЭТИ1;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
             // 
             // ExitMainButton
             // 
@@ -323,6 +333,7 @@
             this.WorkTypesMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.WorkTypesMainButton.TabIndex = 3;
             this.WorkTypesMainButton.TabStop = false;
+            this.WorkTypesMainButton.Click += new System.EventHandler(this.WorkTypesMainButton_Click);
             // 
             // JobsMainButton
             // 
@@ -337,16 +348,6 @@
             this.JobsMainButton.TabIndex = 2;
             this.JobsMainButton.TabStop = false;
             this.JobsMainButton.Click += new System.EventHandler(this.JobsMainButton_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::KursachFileSaving.Properties.Resources.Логотип_НГТУ_НЭТИ1;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 
@@ -364,6 +365,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NSTUMainLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExitMainButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainFormMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainFormClose)).EndInit();
@@ -374,7 +376,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.POsMainButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WorkTypesMainButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.JobsMainButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

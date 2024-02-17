@@ -50,7 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Classes\Apps.cs" />
-    <Compile Include="Models\Classes\DataModel.cs" />
     <Compile Include="Models\Classes\Journal.cs" />
     <Compile Include="Models\Classes\Blocks.cs" />
     <Compile Include="Models\Classes\Employees.cs" />
@@ -60,10 +59,13 @@
     <Compile Include="Models\Interfaces\IJobsControlModuleView.cs" />
     <Compile Include="Models\Interfaces\IJobsControlView.cs" />
     <Compile Include="Models\Interfaces\IMainFormView.cs" />
+    <Compile Include="Models\Interfaces\IWTMView.cs" />
+    <Compile Include="Models\Interfaces\IWTView.cs" />
     <Compile Include="Models\Interfaces\JsonFileManager.cs" />
     <Compile Include="Presenter\JobControlPresenter.cs" />
     <Compile Include="Presenter\JobsControlModulePresenter.cs" />
     <Compile Include="Presenter\MainFormPresenter.cs" />
+    <Compile Include="Presenter\WTMPresenter.cs" />
     <Compile Include="Presenter\WTPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,11 +87,17 @@
     <Compile Include="View\Forms\MainForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Forms\WorkTypesForms\WorkTypeForm.cs">
+    <Compile Include="View\Forms\WorkTypesForms\WTCModule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Forms\WorkTypesForms\WorkTypeForm.Designer.cs">
-      <DependentUpon>WorkTypeForm.cs</DependentUpon>
+    <Compile Include="View\Forms\WorkTypesForms\WTCModule.Designer.cs">
+      <DependentUpon>WTCModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\WorkTypesForms\WTControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\WorkTypesForms\WTControl.Designer.cs">
+      <DependentUpon>WTControl.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Parts\CustomButton.cs">
       <SubType>Component</SubType>
@@ -116,8 +124,11 @@
     <EmbeddedResource Include="View\Forms\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\WorkTypesForms\WorkTypeForm.resx">
-      <DependentUpon>WorkTypeForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\Forms\WorkTypesForms\WTCModule.resx">
+      <DependentUpon>WTCModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\WorkTypesForms\WTControl.resx">
+      <DependentUpon>WTControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -217,5 +228,6 @@
   <ItemGroup>
     <None Include="Images\Логотип_НГТУ_НЭТИ.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

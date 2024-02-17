@@ -10,7 +10,7 @@ namespace KursachFileSaving.Models.Interfaces
     {
         private static string FilePath = "data.json";
 
-        public static void SaveData(List<Apps> apps, List<Blocks> blocks, List<Employees> employees, List<Jobs> jobs, List<Journal> journal, List<PO> po, WorkTypesModel workTypesModel)
+        public static void SaveData(List<Apps> apps, List<Blocks> blocks, List<Employees> employees, List<Jobs> jobs, List<Journal> journal, List<PO> po, List<WorkType> workTypesModel)
         {
             var data = new
             {
@@ -27,7 +27,7 @@ namespace KursachFileSaving.Models.Interfaces
             File.WriteAllText(FilePath, json);
         }
 
-        public static (List<Apps>, List<Blocks>, List<Employees>, List<Jobs>, List<Journal>, List<PO>, WorkTypesModel) LoadData()
+        public static (List<Apps>, List<Blocks>, List<Employees>, List<Jobs>, List<Journal>, List<PO>, List<WorkType>) LoadData()
         {
             if (File.Exists(FilePath))
             {
@@ -40,13 +40,13 @@ namespace KursachFileSaving.Models.Interfaces
                 var jobs = data.Jobs.ToObject<List<Jobs>>();
                 var journal = data.Journal.ToObject<List<Journal>>();
                 var po = data.PO.ToObject<List<PO>>();
-                var workTypesModel = data.WorkTypesModel.ToObject<WorkTypesModel>();
+                var workTypesModel = data.WorkTypesModel.ToObject<List<WorkType>>();
 
                 return (apps, blocks, employees, jobs, journal, po, workTypesModel);
             }
             else
             {
-                return (new List<Apps>(), new List<Blocks>(), new List<Employees>(), new List<Jobs>(), new List<Journal>(), new List<PO>(), new WorkTypesModel());
+                return (new List<Apps>(), new List<Blocks>(), new List<Employees>(), new List<Jobs>(), new List<Journal>(), new List<PO>(), new List<WorkType>());
             }
         }
         public static List<Jobs> LoadJobs()
@@ -61,11 +61,29 @@ namespace KursachFileSaving.Models.Interfaces
                 return new List<Jobs>();
             }
         }
+        public static List<WorkType> LoadWTs()
+        {
+            if (File.Exists(FilePath))
+            {
+                string json = File.ReadAllText(FilePath);
+                return JsonConvert.DeserializeObject<List<WorkType>>(json);
+            }
+            else
+            {
+                return new List<WorkType>();
+            }
+        }
         public static void SaveJobs(List<Jobs> jobslist, string filePath)
         {
             var (apps, blocks, employees, jobs, journal, po, workTypesModel) = LoadData();
             jobs = jobslist;
             SaveData(apps,blocks,employees,jobs,journal,po,workTypesModel);
+        }
+        public static void SaveWTs(List<WorkType> wtslist, string filePath)
+        {
+            var (apps, blocks, employees, jobs, journal, po, workTypesModel) = LoadData();
+            workTypesModel = wtslist;
+            SaveData(apps, blocks, employees, jobs, journal, po, workTypesModel);
         }
         public static void InitializeDataIfFileNotExists()
         {
@@ -76,7 +94,7 @@ namespace KursachFileSaving.Models.Interfaces
             var emptyJobsList = new List<Jobs>();
             var emptyJournalList = new List<Journal>();
             var emptyPoList = new List<PO>();
-            var emptyWorkTypesModel = new WorkTypesModel();
+            var emptyWorkTypesModel = new List<WorkType>();
 
             // Сохранение пустых данных в JSON-файл
             JsonFileManager.SaveData(emptyAppsList, emptyBlocksList, emptyEmployeesList, emptyJobsList, emptyJournalList, emptyPoList, emptyWorkTypesModel);

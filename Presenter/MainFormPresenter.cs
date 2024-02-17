@@ -21,7 +21,7 @@ namespace KursachFileSaving.Presenter
         public List<Jobs> Jobs;
         public List<Journal> Journals;
         public List<PO> POs;
-        public WorkTypesModel WorkTypesModel;
+        public List<WorkType> WorkTypesModel;
         private Form activeForm = null;
 
         private readonly IMainFormView _view;
@@ -31,7 +31,7 @@ namespace KursachFileSaving.Presenter
             _view = view ?? throw new ArgumentNullException(nameof(view));
         }
 
-        public void InitializeData(List<Apps> apps, List<Blocks> blocks, List<Employees> employees, List<Jobs> jobs, List<Journal> journal, List<PO> po, WorkTypesModel workTypesModel)
+        public void InitializeData(List<Apps> apps, List<Blocks> blocks, List<Employees> employees, List<Jobs> jobs, List<Journal> journal, List<PO> po, List<WorkType> workTypesModel)
         {
             Apps = apps;
             Blocks = blocks;

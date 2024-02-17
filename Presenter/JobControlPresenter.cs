@@ -60,6 +60,7 @@ namespace KursachFileSaving.Presenter
             JobsControlModule moduleForm = new JobsControlModule(JobsList, RowToEdit);
             moduleForm.JobCodeTextBox.Enabled = false;
             moduleForm.JobCodeTextBox.Text = JobsList[RowToEdit].JobCode.ToString();
+            moduleForm.JobNameTextBox.Text = JobsList[RowToEdit].JobName.ToString();
             moduleForm.JCMSaveButton.Enabled = false;
             moduleForm.ShowDialog();
             LoadJobs(JobsList);

@@ -12,6 +12,7 @@ using KursachFileSaving.Models.Interfaces;
 using KursachFileSaving.Presenter;
 using KursachFileSaving.View.Forms.JobsControlForms;
 using System.IO;
+using KursachFileSaving.View.Forms.WorkTypesForms;
 
 namespace KursachFileSaving.View.Forms
 {
@@ -55,6 +56,15 @@ namespace KursachFileSaving.View.Forms
             NSTUMainLogo.Visible = false;
             SuspendLayout();
             _presenter.OpenChildForm(new JobsControl(_presenter.Jobs), panel2);
+            ResumeLayout(true);
+        }
+
+        private void WorkTypesMainButton_Click(object sender, EventArgs e)
+        {
+            NSTUMainLogo.Visible = false;
+            NSTUMainLogo.Visible = false;
+            SuspendLayout();
+            _presenter.OpenChildForm(new WTControl(_presenter.WorkTypesModel), panel2);
             ResumeLayout(true);
         }
     }

@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JobsControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVJobs = new System.Windows.Forms.DataGridView();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WorkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.BotWTsPanel = new System.Windows.Forms.Panel();
+            this.BotJobsPanel = new System.Windows.Forms.Panel();
             this.JobsAddButton = new KursachFileSaving.View.Parts.CustomerButton();
             this.JobsSearchLabel = new System.Windows.Forms.Label();
             this.JobsBotLabel = new System.Windows.Forms.Label();
             this.JobsSearchTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVJobs)).BeginInit();
-            this.BotWTsPanel.SuspendLayout();
+            this.BotJobsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JobsAddButton)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,84 +84,25 @@
             this.DGVJobs.TabIndex = 9;
             this.DGVJobs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVJobs_CellContentClick_1);
             // 
-            // Number
+            // BotJobsPanel
             // 
-            this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Number.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Number.HeaderText = "Num.";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            this.Number.Width = 62;
-            // 
-            // Code
-            // 
-            this.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Code.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Code.HeaderText = "Code";
-            this.Code.Name = "Code";
-            this.Code.ReadOnly = true;
-            // 
-            // WorkName
-            // 
-            this.WorkName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.WorkName.DefaultCellStyle = dataGridViewCellStyle4;
-            this.WorkName.HeaderText = "Name";
-            this.WorkName.Name = "WorkName";
-            this.WorkName.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle5.NullValue")));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Edit.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Edit.HeaderText = "";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 5;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle6.NullValue")));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Delete.HeaderText = "";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 5;
-            // 
-            // BotWTsPanel
-            // 
-            this.BotWTsPanel.BackColor = System.Drawing.Color.ForestGreen;
-            this.BotWTsPanel.Controls.Add(this.JobsAddButton);
-            this.BotWTsPanel.Controls.Add(this.JobsSearchLabel);
-            this.BotWTsPanel.Controls.Add(this.JobsBotLabel);
-            this.BotWTsPanel.Controls.Add(this.JobsSearchTextBox);
-            this.BotWTsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BotWTsPanel.Location = new System.Drawing.Point(0, 531);
-            this.BotWTsPanel.Name = "BotWTsPanel";
-            this.BotWTsPanel.Size = new System.Drawing.Size(1050, 35);
-            this.BotWTsPanel.TabIndex = 8;
+            this.BotJobsPanel.BackColor = System.Drawing.Color.ForestGreen;
+            this.BotJobsPanel.Controls.Add(this.JobsAddButton);
+            this.BotJobsPanel.Controls.Add(this.JobsSearchLabel);
+            this.BotJobsPanel.Controls.Add(this.JobsBotLabel);
+            this.BotJobsPanel.Controls.Add(this.JobsSearchTextBox);
+            this.BotJobsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BotJobsPanel.Location = new System.Drawing.Point(0, 531);
+            this.BotJobsPanel.Name = "BotJobsPanel";
+            this.BotJobsPanel.Size = new System.Drawing.Size(1050, 35);
+            this.BotJobsPanel.TabIndex = 8;
             // 
             // JobsAddButton
             // 
             this.JobsAddButton.Image = global::KursachFileSaving.Properties.Resources.PlusNormal;
             this.JobsAddButton.ImageHover = global::KursachFileSaving.Properties.Resources.PlusHover;
             this.JobsAddButton.ImageNormal = global::KursachFileSaving.Properties.Resources.PlusNormal;
-            this.JobsAddButton.Location = new System.Drawing.Point(1010, 4);
+            this.JobsAddButton.Location = new System.Drawing.Point(1019, 4);
             this.JobsAddButton.Name = "JobsAddButton";
             this.JobsAddButton.Size = new System.Drawing.Size(28, 28);
             this.JobsAddButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -225,37 +166,96 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
             // 
+            // Number
+            // 
+            this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Number.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Number.HeaderText = "Номер";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.Width = 70;
+            // 
+            // Code
+            // 
+            this.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Code.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Code.HeaderText = "Код";
+            this.Code.Name = "Code";
+            this.Code.ReadOnly = true;
+            // 
+            // WorkName
+            // 
+            this.WorkName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.WorkName.DefaultCellStyle = dataGridViewCellStyle4;
+            this.WorkName.HeaderText = "Наименование";
+            this.WorkName.Name = "WorkName";
+            this.WorkName.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle5.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle5.NullValue")));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Edit.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Edit.HeaderText = "";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 5;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle6.NullValue")));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Delete.HeaderText = "";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 5;
+            // 
             // JobsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 566);
             this.Controls.Add(this.DGVJobs);
-            this.Controls.Add(this.BotWTsPanel);
+            this.Controls.Add(this.BotJobsPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "JobsControl";
             this.Text = "JobsControl";
             ((System.ComponentModel.ISupportInitialize)(this.DGVJobs)).EndInit();
-            this.BotWTsPanel.ResumeLayout(false);
-            this.BotWTsPanel.PerformLayout();
+            this.BotJobsPanel.ResumeLayout(false);
+            this.BotJobsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JobsAddButton)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel BotWTsPanel;
+        private System.Windows.Forms.Panel BotJobsPanel;
         private System.Windows.Forms.Label JobsSearchLabel;
         private System.Windows.Forms.Label JobsBotLabel;
         public System.Windows.Forms.TextBox JobsSearchTextBox;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private KursachFileSaving.View.Parts.CustomerButton JobsAddButton;
+        public System.Windows.Forms.DataGridView DGVJobs;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn Code;
         private System.Windows.Forms.DataGridViewTextBoxColumn WorkName;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private KursachFileSaving.View.Parts.CustomerButton JobsAddButton;
-        public System.Windows.Forms.DataGridView DGVJobs;
     }
 }
