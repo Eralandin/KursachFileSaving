@@ -26,55 +26,66 @@ namespace KursachFileSaving.Presenter
 
         private void SaveJob(object sender, EventArgs e)
         {
-            // Логика сохранения новой должности
-            // Проверка введенных данных
-            if (string.IsNullOrEmpty(_view.JobName))
+            try
             {
-                MessageBox.Show("Введите название должности!");
-                // Оповещение пользователя об ошибке ввода
-                // Возможно, отображение сообщения об ошибке
+                // Логика сохранения новой должности
+                // Проверка введенных данных
+
+                // Создание новой должности
+                Jobs newJob = new Jobs
+                {
+                    // Присваивание значений из представления
+                    JobCode = int.Parse(_view.JobCode),
+                    JobName = _view.JobName
+                };
+                // Добавление новой должности в список
+                _JobsData.Add(newJob);
+
+                JsonFileManager.SaveJobs(_JobsData, "data.json");
+
+                // Оповещение пользователя об успешном сохранении
+                MessageBox.Show("Новая должность успешно сохранена!");
+
+                // Закрытие формы после сохранения
+                _view.CloseForm();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show($"Ошибка! {ex.Message}");
                 return;
             }
-
-            // Создание новой должности
-            Jobs newJob = new Jobs
+            catch (Exception ex)
             {
-                // Присваивание значений из представления
-                JobCode = int.Parse(_view.JobCode),
-                JobName = _view.JobName
-            };
-            // Добавление новой должности в список
-            _JobsData.Add(newJob);
-
-            JsonFileManager.SaveJobs(_JobsData, "data.json");
-
-            // Оповещение пользователя об успешном сохранении
-            MessageBox.Show("Новая должность успешно сохранена!");
-
-            // Закрытие формы после сохранения
-            _view.CloseForm();
+                MessageBox.Show($"Непредвиденная ошибка! {ex.Message}");
+                return;
+            }
         }
 
         private void UpdateJob(object sender, EventArgs e)
         {
-            // Логика обновления выбранной должности
-            // Проверка введенных данных
-            if (string.IsNullOrEmpty(_view.JobName))
+            try
             {
-                MessageBox.Show("Введите название должности!");
-                // Оповещение пользователя об ошибке ввода
-                // Возможно, отображение сообщения об ошибке
+                // Логика обновления выбранной должности
+                Jobs updatedjob = new Jobs
+                {
+                    JobCode = int.Parse(_view.JobCode),
+                    JobName = _view.JobName
+                };
+                _JobsData.RemoveAt(RowToEdit);
+                _JobsData.Insert(RowToEdit, updatedjob);
+                JsonFileManager.SaveJobs(_JobsData, "data.json");
+                _view.CloseForm();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show($"Ошибка! {ex.Message}");
                 return;
             }
-            Jobs updatedjob = new Jobs
+            catch(Exception ex)
             {
-                JobCode = int.Parse(_view.JobCode),
-                JobName = _view.JobName
-            };
-            _JobsData.RemoveAt(RowToEdit);
-            _JobsData.Insert(RowToEdit, updatedjob);
-            JsonFileManager.SaveJobs(_JobsData, "data.json");
-            _view.CloseForm();
+                MessageBox.Show($"Непредвиденная ошибка! {ex.Message}");
+                return;
+            }
         }
     }
 }

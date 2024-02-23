@@ -73,6 +73,19 @@ namespace KursachFileSaving.Models.Interfaces
                 return new List<WorkType>();
             }
         }
+        public static List<PO> LoadPOs()
+        {
+            if (File.Exists(FilePath))
+            {
+                string json = File.ReadAllText(FilePath);
+                var data = JsonConvert.DeserializeObject<dynamic>(json);
+                return data.PO.ToObject<List<PO>>();
+            }
+            else
+            {
+                return new List<PO> { };
+            }
+        }
         public static void SaveJobs(List<Jobs> jobslist, string filePath)
         {
             var (apps, blocks, employees, jobs, journal, po, workTypesModel) = LoadData();
@@ -89,6 +102,12 @@ namespace KursachFileSaving.Models.Interfaces
         {
             var (apps, blocks, employees, jobs, journal, po, workTypesModel) = LoadData();
             po = polist;
+            SaveData(apps, blocks, employees, jobs, journal, po, workTypesModel);
+        }
+        public static void SaveBlocks(List<Blocks> blockslist, string filePath)
+        {
+            var (apps, blocks, employees, jobs, journal, po, workTypesModel) = LoadData();
+            blocks = blockslist;
             SaveData(apps, blocks, employees, jobs, journal, po, workTypesModel);
         }
         public static void InitializeDataIfFileNotExists()

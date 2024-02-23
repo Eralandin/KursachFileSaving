@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static KursachFileSaving.View.Forms.JobsControlForms.JobsControl;
 
 namespace KursachFileSaving.Presenter
@@ -68,9 +69,17 @@ namespace KursachFileSaving.Presenter
 
         public void DeleteJob(object sender, EventArgs e)
         {
-            JobsList.Remove(JobsList[RowToDelete]);
-            JsonFileManager.SaveJobs(JobsList, "data.json");
-            LoadJobs(JobsList);
+            try
+            {
+                JobsList.Remove(JobsList[RowToDelete]);
+                JsonFileManager.SaveJobs(JobsList, "data.json");
+                LoadJobs(JobsList);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
+                return;
+            }
         }
         private void OnSearch(object sender, SearchEventArgs e)
         {

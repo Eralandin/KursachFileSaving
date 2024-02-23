@@ -33,27 +33,46 @@ namespace KursachFileSaving.Presenter
 
         public void InitializeData(List<Apps> apps, List<Blocks> blocks, List<Employees> employees, List<Jobs> jobs, List<Journal> journal, List<PO> po, List<WorkType> workTypesModel)
         {
-            Apps = apps;
-            Blocks = blocks;
-            Employees = employees;
-            Jobs = jobs;
-            Journals = journal;
-            POs = po;
-            WorkTypesModel = workTypesModel;
+            try
+            {
+                Apps = apps;
+                Blocks = blocks;
+                Employees = employees;
+                Jobs = jobs;
+                Journals = journal;
+                POs = po;
+                WorkTypesModel = workTypesModel;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
+                return;
+            }
         }
 
         public void OpenChildForm(Form childForm, Panel panel)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panel.Controls.Add(childForm);
-            panel.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+            try
+            {
+                if (activeForm != null)
+                {
+                    activeForm.Dispose();
+                    activeForm.Close();
+                }
+                activeForm = childForm;
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+                panel.Controls.Add(childForm);
+                panel.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
+                return;
+            }
         }
     }
 }

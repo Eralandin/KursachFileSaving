@@ -14,56 +14,73 @@ namespace KursachFileSaving.Presenter
         private readonly IPOModuleView _view;
         private List<PO> poData; // Список должностей, загруженных из JSON-файла
         public int RowToEdit;
-        public POCMPresenter(IPOModuleView view, List<PO> podata, int rowtoedit)
+        public int BlockCode;
+        public POCMPresenter(IPOModuleView view, List<PO> podata, int rowtoedit, int blockcode)
         {
             _view = view ?? throw new ArgumentNullException(nameof(view));
             poData = podata;
             _view.SavePO += SavePO;
             _view.UpdatePO += UpdatePO;
             RowToEdit = rowtoedit;
+            BlockCode = blockcode;
         }
         private void SavePO(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(_view.POName))
+            try
             {
-                MessageBox.Show("Введите название типа работ!");
+                PO po = new PO
+                {
+                    // Присваивание значений из представления
+                    POCode = int.Parse(_view.POCode),
+                    POName = _view.POName,
+                };
+                poData.Add(po);
+
+                JsonFileManager.SavePOs(poData, "data.json");
+
+                // Оповещение пользователя об успешном сохранении
+                MessageBox.Show("Новое ПО успешно сохранено!");
+
+                // Закрытие формы после сохранения
+                _view.CloseForm();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Ошибка! " + ex.Message);
                 return;
             }
-            PO po = new PO
+            catch (Exception ex)
             {
-                // Присваивание значений из представления
-                POCode = int.Parse(_view.POCode),
-                POName = _view.POName,
-            };
-            poData.Add(po);
-
-            JsonFileManager.SavePOs(poData, "data.json");
-
-            // Оповещение пользователя об успешном сохранении
-            MessageBox.Show("Новое ПО успешно сохранено!");
-
-            // Закрытие формы после сохранения
-            _view.CloseForm();
+                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
+                return;
+            }
         }
         private void UpdatePO(object sender, EventArgs e)
         {
-            // Логика обновления выбранного типа работ
-            // Проверка введенных данных
-            if (string.IsNullOrEmpty(_view.POName))
+            try
             {
-                MessageBox.Show("Введите название типа работ!");
+                PO po = new PO
+                {
+                    // Присваивание значений из представления
+                    POCode = int.Parse(_view.POCode),
+                    POName = _view.POName,
+                    BlockCode = int.Parse(_view.BlockCode)
+                };
+                poData.RemoveAt(RowToEdit);
+                poData.Insert(RowToEdit, po);
+                JsonFileManager.SavePOs(poData, "data.json");
+                _view.CloseForm();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Ошибка! " + ex.Message);
                 return;
             }
-            PO po = new PO
+            catch (Exception ex)
             {
-                // Присваивание значений из представления
-                POCode = int.Parse(_view.POCode),
-                POName = _view.POName,
-            };
-            poData.RemoveAt(RowToEdit);
-            poData.Insert(RowToEdit, po);
-            JsonFileManager.SavePOs(poData, "data.json");
-            _view.CloseForm();
+                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
+                return;
+            }
         }
     }
 }

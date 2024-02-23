@@ -8,16 +8,16 @@ using static KursachFileSaving.View.Forms.JobsControlForms.JobsControl;
 
 namespace KursachFileSaving.Models.Interfaces
 {
-    public interface IPOView
+    public interface IBCView
     {
         event EventHandler Load;
-        event EventHandler AddPO;
-        event EventHandler UpdatePO;
-        event EventHandler DeletePO;
+        event EventHandler AddBlock;
+        event EventHandler UpdateBlock;
+        event EventHandler DeleteBlock;
         event EventHandler<SearchEventArgs> SearchTextChanged;
 
         string SearchText { get; }
 
-        void ShowPOs(List<PO> poList);
+        void ShowBlocks(List<Blocks> blocksList);
     }
 }

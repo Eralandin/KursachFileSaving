@@ -46,11 +46,6 @@ namespace KursachFileSaving.View.Forms.POControlForms
                 }
             }
         }
-        public void ShowMessage(string message)
-        {
-            MessageBox.Show(message);
-        }
-
         private void DGVPOs_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)

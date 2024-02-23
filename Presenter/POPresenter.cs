@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static KursachFileSaving.View.Forms.JobsControlForms.JobsControl;
 
 namespace KursachFileSaving.Presenter
@@ -43,7 +44,7 @@ namespace KursachFileSaving.Presenter
 
         public void AddPO(object sender, EventArgs e)
         {
-            POCM moduleForm = new POCM(_poList, RowToEdit);
+            POCM moduleForm = new POCM(_poList, RowToEdit, "0");
             moduleForm.POMUpdateButton.Enabled = false;
             if (_poList.Count == 0)
             {
@@ -60,7 +61,7 @@ namespace KursachFileSaving.Presenter
 
         public void UpdatePO(object sender, EventArgs e)
         {
-            POCM moduleForm = new POCM(_poList, RowToEdit);
+            POCM moduleForm = new POCM(_poList, RowToEdit, _poList[RowToEdit].BlockCode.ToString());
             moduleForm.POCodeTextBox.Enabled = false;
             moduleForm.POCodeTextBox.Text = _poList[RowToEdit].POCode.ToString();
             moduleForm.PONameTextBox.Text = _poList[RowToEdit].POName.ToString();
@@ -71,9 +72,17 @@ namespace KursachFileSaving.Presenter
 
         public void DeletePO(object sender, EventArgs e)
         {
-            _poList.Remove(_poList[RowToDelete]);
-            JsonFileManager.SavePOs(_poList, "data.json");
-            LoadPOs(_poList);
+            try
+            {
+                _poList.Remove(_poList[RowToDelete]);
+                JsonFileManager.SavePOs(_poList, "data.json");
+                LoadPOs(_poList);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
+                return;
+            }
         }
 
         private void OnSearch(object sender, SearchEventArgs e)
@@ -83,7 +92,7 @@ namespace KursachFileSaving.Presenter
 
             // Выполняем логику поиска по тексту запроса
             // Например, фильтруем список должностей по названию или коду
-            List<PO> filteredPOs = _poList.Where(po => po.POName.Contains(searchText) || po.POCode.ToString().Contains(searchText)).ToList();
+            List<PO> filteredPOs = _poList.Where(po => po.POName.Contains(searchText) || po.POCode.ToString().Contains(searchText) || po.BlockCode.ToString().Contains(searchText)).ToList();
 
             // Обновляем представление с отфильтрованным списком должностей
             _view.ShowPOs(filteredPOs);

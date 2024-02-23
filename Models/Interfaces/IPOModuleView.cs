@@ -10,6 +10,7 @@ namespace KursachFileSaving.Models.Interfaces
     {
         string POCode { get; set; }
         string POName { get; set; }
+        string BlockCode {  get; set; }
 
         event EventHandler SavePO;
         event EventHandler UpdatePO;

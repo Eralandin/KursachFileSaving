@@ -276,6 +276,7 @@
             this.PCsMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PCsMainButton.TabIndex = 5;
             this.PCsMainButton.TabStop = false;
+            this.PCsMainButton.Click += new System.EventHandler(this.PCsMainButton_Click);
             // 
             // POsMainButton
             // 

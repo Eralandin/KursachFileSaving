@@ -13,12 +13,12 @@ namespace KursachFileSaving.Models.Classes
         public int AppCode { get; set; } = 0;
         public string FirstName {  get; set; }
         public string LastName { get; set; }
-        public string Patronymic { get; set; }
+        public string Patronymic { get; set; } = "Не указано";
         public string Login {  get; set; }
         private string Password { get; set; }
         public string Email { get; set; }
         public int JobCode {  get; set; }
-        public int WorkCode {  get; set; }
+        public int WorkCode { get; set; } = 0;
         private string Salt { get; set; }
     }
 }

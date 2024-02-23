@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static KursachFileSaving.View.Forms.JobsControlForms.JobsControl;
 
 namespace KursachFileSaving.Presenter
@@ -65,9 +66,17 @@ namespace KursachFileSaving.Presenter
         }
         public void DeleteWT(object sender, EventArgs e)
         {
-            WTsList.Remove(WTsList[RowToDelete]);
-            JsonFileManager.SaveWTs(WTsList, "data.json");
-            LoadWTs(WTsList);
+            try
+            {
+                WTsList.Remove(WTsList[RowToDelete]);
+                JsonFileManager.SaveWTs(WTsList, "data.json");
+                LoadWTs(WTsList);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
+                return;
+            }
         }
         private void OnSearch(object sender, SearchEventArgs e)
         {

@@ -24,58 +24,62 @@ namespace KursachFileSaving.Presenter
         }
         private void SaveWT(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(_view.WorkTypeName))
+            try
             {
-                MessageBox.Show("Введите название типа работ!");
+                WorkType wt = new WorkType
+                {
+                    // Присваивание значений из представления
+                    WorkTypeCode = int.Parse(_view.WorkTypeCode),
+                    WorkTypeName = _view.WorkTypeName,
+                    WorkTypeComm = _view.WorkTypeComm
+                };
+                WTsData.Add(wt);
+
+                JsonFileManager.SaveWTs(WTsData, "data.json");
+
+                // Оповещение пользователя об успешном сохранении
+                MessageBox.Show("Новый тип работ успешно сохранён!");
+
+                // Закрытие формы после сохранения
+                _view.CloseForm();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Ошибка! " + ex.Message);
                 return;
             }
-            else if (string.IsNullOrEmpty(_view.WorkTypeComm))
+            catch (Exception ex)
             {
-                MessageBox.Show("Введите комментарий к типу работ!");
+                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
                 return;
             }
-            WorkType wt = new WorkType
-            {
-                // Присваивание значений из представления
-                WorkTypeCode = int.Parse(_view.WorkTypeCode),
-                WorkTypeName = _view.WorkTypeName,
-                WorkTypeComm = _view.WorkTypeComm
-            };
-            WTsData.Add(wt);
-
-            JsonFileManager.SaveWTs(WTsData, "data.json");
-
-            // Оповещение пользователя об успешном сохранении
-            MessageBox.Show("Новый тип работ успешно сохранён!");
-
-            // Закрытие формы после сохранения
-            _view.CloseForm();
         }
         private void UpdateWT(object sender, EventArgs e)
         {
-            // Логика обновления выбранного типа работ
-            // Проверка введенных данных
-            if (string.IsNullOrEmpty(_view.WorkTypeName))
+            try
             {
-                MessageBox.Show("Введите название типа работ!");
+                WorkType wt = new WorkType
+                {
+                    // Присваивание значений из представления
+                    WorkTypeCode = int.Parse(_view.WorkTypeCode),
+                    WorkTypeName = _view.WorkTypeName,
+                    WorkTypeComm = _view.WorkTypeComm
+                };
+                WTsData.RemoveAt(RowToEdit);
+                WTsData.Insert(RowToEdit, wt);
+                JsonFileManager.SaveWTs(WTsData, "data.json");
+                _view.CloseForm();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Ошибка! " + ex.Message);
                 return;
             }
-            else if (string.IsNullOrEmpty(_view.WorkTypeComm))
+            catch (Exception ex)
             {
-                MessageBox.Show("Введите комментарий к типу работ!");
+                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
                 return;
             }
-            WorkType wt = new WorkType
-            {
-                // Присваивание значений из представления
-                WorkTypeCode = int.Parse(_view.WorkTypeCode),
-                WorkTypeName = _view.WorkTypeName,
-                WorkTypeComm = _view.WorkTypeComm
-            };
-            WTsData.RemoveAt(RowToEdit);
-            WTsData.Insert(RowToEdit, wt);
-            JsonFileManager.SaveWTs(WTsData, "data.json");
-            _view.CloseForm();
         }
     }
 }

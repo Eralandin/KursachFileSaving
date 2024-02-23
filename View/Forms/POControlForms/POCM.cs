@@ -16,13 +16,15 @@ namespace KursachFileSaving.View.Forms.POControlForms
     public partial class POCM : Form, IPOModuleView
     {
         private readonly POCMPresenter _presenter;
-        public POCM(List<PO> poData, int rowtoedit)
+        public POCM(List<PO> poData, int rowtoedit, string blockcode)
         {
             InitializeComponent();
-            _presenter = new POCMPresenter(this, poData, rowtoedit);
+            _presenter = new POCMPresenter(this, poData, rowtoedit, int.Parse(blockcode));
+            BlockCode = blockcode;
         }
         public string POCode { get => POCodeTextBox.Text; set => POCodeTextBox.Text = value; }
         public string POName { get => PONameTextBox.Text; set => PONameTextBox.Text = value; }
+        public string BlockCode { get; set; }
 
         public event EventHandler SavePO;
         public event EventHandler UpdatePO;
