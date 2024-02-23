@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KursachFileSaving.View.Forms.ConfirmationForms;
 
 namespace KursachFileSaving.View.Forms.WorkTypesForms
 {
@@ -35,6 +36,8 @@ namespace KursachFileSaving.View.Forms.WorkTypesForms
         }
         public void CloseForm()
         {
+            OperationConfirmedForm ocf = new OperationConfirmedForm();
+            ocf.ShowDialog();
             this.Close();
         }
 

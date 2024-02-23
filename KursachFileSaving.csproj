@@ -89,6 +89,12 @@
     <Compile Include="View\Forms\BlocksControlForms\BlockControlModule.Designer.cs">
       <DependentUpon>BlockControlModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\ConfirmationForms\OperationConfirmedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\ConfirmationForms\OperationConfirmedForm.Designer.cs">
+      <DependentUpon>OperationConfirmedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\EmpControlForms\ECM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\BlocksControlForms\BlockControlModule.resx">
       <DependentUpon>BlockControlModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\ConfirmationForms\OperationConfirmedForm.resx">
+      <DependentUpon>OperationConfirmedForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\EmpControlForms\ECM.resx">
       <DependentUpon>ECM.cs</DependentUpon>
@@ -290,6 +299,11 @@
   <ItemGroup>
     <None Include="Images\Логотип_НГТУ_НЭТИ.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\галочка_зелёная.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GIFГалочкаЗелёная.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

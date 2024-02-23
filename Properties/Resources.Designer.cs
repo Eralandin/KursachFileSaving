@@ -163,6 +163,16 @@ namespace KursachFileSaving.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap GIFГалочкаЗелёная {
+            get {
+                object obj = ResourceManager.GetObject("GIFГалочкаЗелёная", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HoverWorkers {
             get {
                 object obj = ResourceManager.GetObject("HoverWorkers", resourceCulture);
@@ -316,6 +326,16 @@ namespace KursachFileSaving.Properties {
         internal static System.Drawing.Bitmap WorktypeHover {
             get {
                 object obj = ResourceManager.GetObject("WorktypeHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap галочка_зелёная {
+            get {
+                object obj = ResourceManager.GetObject("галочка_зелёная", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

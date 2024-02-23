@@ -1,6 +1,7 @@
 ﻿using KursachFileSaving.Models.Classes;
 using KursachFileSaving.Models.Interfaces;
 using KursachFileSaving.Presenter;
+using KursachFileSaving.View.Forms.ConfirmationForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,8 @@ namespace KursachFileSaving.View.Forms.POControlForms
 
         public void CloseForm()
         {
+            OperationConfirmedForm ocf = new OperationConfirmedForm();
+            ocf.ShowDialog();
             this.Close();
         }
 

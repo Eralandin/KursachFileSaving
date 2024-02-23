@@ -1,5 +1,6 @@
 ﻿using KursachFileSaving.Models.Classes;
 using KursachFileSaving.Models.Interfaces;
+using KursachFileSaving.View.Forms.ConfirmationForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -98,7 +99,6 @@ namespace KursachFileSaving.Presenter
                     JsonFileManager.SavePOs(poList, "data.json");
                 }
 
-                MessageBox.Show("Блок успешно обновлён!");
                 _view.CloseForm();
             }
             catch (ArgumentException ex)
