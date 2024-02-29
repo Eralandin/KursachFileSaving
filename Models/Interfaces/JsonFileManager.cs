@@ -61,6 +61,19 @@ namespace KursachFileSaving.Models.Interfaces
                 return new List<Jobs>();
             }
         }
+        public static List<Blocks> LoadBlocks()
+        {
+            if (File.Exists(FilePath))
+            {
+                string json = File.ReadAllText(FilePath);
+                var data = JsonConvert.DeserializeObject<dynamic>(json);
+                return data.Blocks.ToObject<List<Blocks>>();
+            }
+            else
+            {
+                return new List<Blocks> { };
+            }
+        }
         public static List<WorkType> LoadWTs()
         {
             if (File.Exists(FilePath))

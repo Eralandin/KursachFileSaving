@@ -8,16 +8,17 @@ using static KursachFileSaving.View.Forms.JobsControlForms.JobsControl;
 
 namespace KursachFileSaving.Models.Interfaces
 {
-    public interface IWTView
+    internal interface IECView
     {
         event EventHandler Load;
-        event EventHandler AddWT;
-        event EventHandler UpdateWT;
-        event EventHandler DeleteWT;
+        event EventHandler AddEmp;
+        event EventHandler UpdateEmp;
+        event EventHandler DeleteEmp;
         event EventHandler<SearchEventArgs> SearchTextChanged;
         event EventHandler<string> MessageForm;
-        string SearchText { get; }
 
-        void ShowWTs(List<WorkType> wts);
+        string SearchText { get; }
+        void MessageFormView(string message);
+        void ShowEmps(List<Employees> empsList);
     }
 }

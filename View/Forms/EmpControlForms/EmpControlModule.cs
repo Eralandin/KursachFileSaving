@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace KursachFileSaving.View.Forms.EmpControlForms
 {
-    public partial class ECM : Form
+    public partial class EmpControlModule : Form
     {
-        public ECM()
+        public EmpControlModule()
         {
             InitializeComponent();
+        }
+
+        private void BCMCancelButton_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

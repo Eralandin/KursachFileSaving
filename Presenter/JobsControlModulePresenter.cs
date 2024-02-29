@@ -1,5 +1,6 @@
 ﻿using KursachFileSaving.Models.Classes;
 using KursachFileSaving.Models.Interfaces;
+using KursachFileSaving.View.Forms.ConfirmationForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,13 @@ namespace KursachFileSaving.Presenter
             _JobsData = jobsData;
             _view.SaveJob += SaveJob;
             _view.UpdateJob += UpdateJob;
+            _view.MessageForm += MessageFormCreate;
             RowToEdit = rowtoedit;
+        }
+        private void MessageFormCreate(object sender, string message)
+        {
+            MessageForm mf = new MessageForm(message);
+            mf.ShowDialog();
         }
 
         private void SaveJob(object sender, EventArgs e)
@@ -43,20 +50,17 @@ namespace KursachFileSaving.Presenter
 
                 JsonFileManager.SaveJobs(_JobsData, "data.json");
 
-                // Оповещение пользователя об успешном сохранении
-                MessageBox.Show("Новая должность успешно сохранена!");
-
                 // Закрытие формы после сохранения
                 _view.CloseForm();
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show($"Ошибка! {ex.Message}");
+                MessageFormCreate(this, "Ошибка!" + ex.Message);
                 return;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Непредвиденная ошибка! {ex.Message}");
+                MessageFormCreate(this, "Непредвиденная ошибка!" + ex.Message);
                 return;
             }
         }
@@ -78,12 +82,12 @@ namespace KursachFileSaving.Presenter
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show($"Ошибка! {ex.Message}");
+                MessageFormCreate(this, "Ошибка!" + ex.Message);
                 return;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show($"Непредвиденная ошибка! {ex.Message}");
+                MessageFormCreate(this, "Непредвиденная ошибка!" + ex.Message);
                 return;
             }
         }

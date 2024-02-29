@@ -27,6 +27,12 @@ namespace KursachFileSaving.Presenter
             RowToEdit = rowtoedit;
             poData = poList;
             _view.SearchTextChanged += OnSearch;
+            _view.MessageForm += MessageFormCreate;
+        }
+        private void MessageFormCreate(object sender, string message)
+        {
+            MessageForm mf = new MessageForm(message);
+            mf.ShowDialog();
         }
         private void SaveBlock(object sender, EventArgs e)
         {
@@ -45,20 +51,17 @@ namespace KursachFileSaving.Presenter
 
                 JsonFileManager.SaveBlocks(blocksData, "data.json");
 
-                // Оповещение пользователя об успешном сохранении
-                MessageBox.Show("Новый блок успешно сохранён!");
-
                 // Закрытие формы после сохранения
                 _view.CloseForm();
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show("Ошибка! " + ex.Message);
+                _view.MessageFormView("Ошибка! " + ex.Message);
                 return;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Непредвиненная ошибка! " + ex.Message);
+                _view.MessageFormView("Непредвиденная ошибка! " + ex.Message);
                 return;
             }
         }
@@ -68,7 +71,7 @@ namespace KursachFileSaving.Presenter
             {
                 if (_view.POCOde == "")
                 {
-                    MessageBox.Show("Введите код ПО! (если ПО ещё не назначено - выбирайте 0)");
+                    _view.MessageFormView("Введите код ПО! (если ПО ещё не назначено - выбирайте 0)");
                     return;
                 }
                 if ((_view.POCOde == "0" || _view.POCOde != "0") && blocksData[RowToEdit].POCode.ToString() != "0")
@@ -103,12 +106,12 @@ namespace KursachFileSaving.Presenter
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show("Ошибка! " + ex.Message);
+                _view.MessageFormView("Ошибка! " + ex.Message);
                 return;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Непредвиненная ошибка! " + ex.Message);
+                _view.MessageFormView("Непредвиденная ошибка! " + ex.Message);
                 return;
             }
         }

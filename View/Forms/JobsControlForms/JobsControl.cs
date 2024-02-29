@@ -1,6 +1,7 @@
 ﻿using KursachFileSaving.Models.Classes;
 using KursachFileSaving.Models.Interfaces;
 using KursachFileSaving.Presenter;
+using KursachFileSaving.View.Forms.ConfirmationForms;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -33,6 +34,7 @@ namespace KursachFileSaving.View.Forms.JobsControlForms
         public event EventHandler AddJob;
         public event EventHandler UpdateJob;
         public event EventHandler DeleteJob;
+        public event EventHandler<string> MessageForm;
         public event EventHandler<SearchEventArgs> SearchTextChanged;
 
         public string SearchText => JobsSearchTextBox.Text;
@@ -53,11 +55,6 @@ namespace KursachFileSaving.View.Forms.JobsControlForms
             }
         }
 
-        public void ShowMessage(string message)
-        {
-            MessageBox.Show(message);
-        }
-
         private void DGVJobs_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -67,7 +64,7 @@ namespace KursachFileSaving.View.Forms.JobsControlForms
                 {
                     // Логика редактирования должности
                     _presenter.RowToEdit = e.RowIndex;
-                    _presenter.UpdateJob(sender, e);
+                    UpdateJob?.Invoke(sender, e);
                 }
                 else if (colName == "Delete")
                 {
@@ -75,8 +72,7 @@ namespace KursachFileSaving.View.Forms.JobsControlForms
                     {
                         // Логика удаления должности
                         _presenter.RowToDelete = e.RowIndex;
-                        _presenter.DeleteJob(sender, e);
-                        MessageBox.Show("Должность успешно удалена!");
+                        DeleteJob?.Invoke(sender, e);
                     }
                 }
             }
@@ -84,7 +80,7 @@ namespace KursachFileSaving.View.Forms.JobsControlForms
 
         private void JobsAddButton_Click(object sender, EventArgs e)
         {
-            _presenter.AddJob(sender, e);
+            AddJob?.Invoke(sender, e);
         }
 
         private void JobsSearchTextBox_TextChanged(object sender, EventArgs e)

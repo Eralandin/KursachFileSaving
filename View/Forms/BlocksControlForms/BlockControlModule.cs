@@ -43,7 +43,13 @@ namespace KursachFileSaving.View.Forms.BlocksControlForms
         public event EventHandler UpdateBlock;
         public event EventHandler Cancel;
         public event EventHandler<SearchEventArgs> SearchTextChanged;
+        public event EventHandler<string> MessageForm;
         public string SearchText => POsBCMSearchTextBox.Text;
+        public void MessageFormView(string message)
+        {
+            MessageForm mf = new MessageForm(message);
+            mf.ShowDialog();
+        }
         public void CloseForm()
         {
             OperationConfirmedForm ocf = new OperationConfirmedForm();

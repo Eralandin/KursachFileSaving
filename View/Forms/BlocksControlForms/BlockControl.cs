@@ -1,6 +1,7 @@
 ﻿using KursachFileSaving.Models.Classes;
 using KursachFileSaving.Models.Interfaces;
 using KursachFileSaving.Presenter;
+using KursachFileSaving.View.Forms.ConfirmationForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,13 @@ namespace KursachFileSaving.View.Forms.BlocksControlForms
         public event EventHandler UpdateBlock;
         public event EventHandler DeleteBlock;
         public event EventHandler<SearchEventArgs> SearchTextChanged;
+        public event EventHandler<string> MessageForm;
+
+        public void MessageFormView(string message)
+        {
+            MessageForm mf = new MessageForm(message);
+            mf.ShowDialog();
+        }
         public string SearchText => BlocksSearchTextBox.Text;
         public void ShowBlocks(List<Blocks> blockslist)
         {
@@ -54,22 +62,22 @@ namespace KursachFileSaving.View.Forms.BlocksControlForms
                 if (colName == "Edit")
                 {
                     _presenter.RowToEdit = e.RowIndex;
-                    _presenter.UpdateBlock(sender, e);
+                    UpdateBlock?.Invoke(sender, e);
                 }
                 else if (colName == "Delete")
                 {
                     if (MessageBox.Show("Вы уверены, что хотите удалить этот блок?", "Удаление блока", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         _presenter.RowToDelete = e.RowIndex;
-                        _presenter.DeleteBlock(sender, e);
-                        MessageBox.Show("Блок успешно удалён!");
+                        DeleteBlock?.Invoke(sender, e);
+                        MessageForm.Invoke(this, "Блок успешно удалён!");
                     }
                 }
             }
         }
         private void BlocksAddButton_Click(object sender, EventArgs e)
         {
-            _presenter.AddBlock(sender, e);
+            AddBlock?.Invoke(sender, e);
         }
         private void BlocksSearchTextBox_TextChanged(object sender, EventArgs e)
         {

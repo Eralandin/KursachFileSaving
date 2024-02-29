@@ -14,6 +14,7 @@ namespace KursachFileSaving.Models.Interfaces
         event EventHandler SaveJob;
         event EventHandler UpdateJob;
         event EventHandler Cancel;
+        event EventHandler<string> MessageForm;
         void CloseForm();
     }
 }

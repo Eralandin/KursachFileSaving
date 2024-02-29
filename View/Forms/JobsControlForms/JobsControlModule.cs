@@ -29,6 +29,7 @@ namespace KursachFileSaving.View.Forms.JobsControlForms
         public event EventHandler SaveJob;
         public event EventHandler UpdateJob;
         public event EventHandler Cancel;
+        public event EventHandler<string> MessageForm;
 
         private void JCMCancelButton_Click(object sender, EventArgs e)
         {
@@ -37,7 +38,10 @@ namespace KursachFileSaving.View.Forms.JobsControlForms
 
         private void JCMSaveButton_Click(object sender, EventArgs e)
         {
-            SaveJob?.Invoke(this, EventArgs.Empty);
+            if (MessageBox.Show("Вы уверены, что хотите добавить эту должность?", "Добавление должности", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                SaveJob?.Invoke(this, EventArgs.Empty);
+            }
         }
         public void CloseForm()
         {

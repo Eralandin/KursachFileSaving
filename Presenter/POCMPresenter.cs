@@ -1,5 +1,6 @@
 ﻿using KursachFileSaving.Models.Classes;
 using KursachFileSaving.Models.Interfaces;
+using KursachFileSaving.View.Forms.ConfirmationForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,12 @@ namespace KursachFileSaving.Presenter
             _view.UpdatePO += UpdatePO;
             RowToEdit = rowtoedit;
             BlockCode = blockcode;
+            _view.MessageForm += MessageFormCreate;
+        }
+        private void MessageFormCreate(object sender, string message)
+        {
+            MessageForm mf = new MessageForm(message);
+            mf.ShowDialog();
         }
         private void SavePO(object sender, EventArgs e)
         {
@@ -46,12 +53,12 @@ namespace KursachFileSaving.Presenter
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show("Ошибка! " + ex.Message);
+                _view.MessageFormView("Ошибка! " + ex.Message);
                 return;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
+                _view.MessageFormView("Непредвиденная ошибка! " + ex.Message);
                 return;
             }
         }
@@ -73,12 +80,12 @@ namespace KursachFileSaving.Presenter
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show("Ошибка! " + ex.Message);
+                _view.MessageFormView("Ошибка! " + ex.Message);
                 return;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
+                _view.MessageFormView("Непредвиденная ошибка! " + ex.Message);
                 return;
             }
         }

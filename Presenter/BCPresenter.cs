@@ -1,6 +1,7 @@
 ﻿using KursachFileSaving.Models.Classes;
 using KursachFileSaving.Models.Interfaces;
 using KursachFileSaving.View.Forms.BlocksControlForms;
+using KursachFileSaving.View.Forms.ConfirmationForms;
 using KursachFileSaving.View.Forms.POControlForms;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,12 @@ namespace KursachFileSaving.Presenter
             _view.UpdateBlock += UpdateBlock;
             _view.DeleteBlock += DeleteBlock;
             _view.SearchTextChanged += OnSearch;
+            _view.MessageForm += MessageFormCreate;
+        }
+        private void MessageFormCreate(object sender, string message)
+        {
+            MessageForm mf = new MessageForm(message);
+            mf.ShowDialog();
         }
         private void OnLoad(object sender, EventArgs e)
         {
@@ -45,6 +52,9 @@ namespace KursachFileSaving.Presenter
         {
             BlockControlModule moduleForm = new BlockControlModule(_blocksList, RowToEdit);
             moduleForm.BCMUpdateButton.Enabled = false;
+            moduleForm.BCMPOsDGV.Enabled = false;
+            moduleForm.POsBCMSearchTextBox.Enabled = false;
+            moduleForm.label9.Enabled = false;
             if (_blocksList.Count == 0)
             {
                 moduleForm.BlockCodeTextBox.Text = 1.ToString();
@@ -87,7 +97,7 @@ namespace KursachFileSaving.Presenter
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
+                _view.MessageFormView("Непредвиденная ошибка! " + ex.Message);
                 return;
             }
         }

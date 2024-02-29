@@ -15,6 +15,8 @@ namespace KursachFileSaving.Models.Interfaces
         event EventHandler SaveWT;
         event EventHandler UpdateWT;
         event EventHandler Cancel;
+        event EventHandler<string> MessageForm;
+        void MessageFormView(string message);
         void CloseForm();
     }
 }

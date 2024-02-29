@@ -21,8 +21,10 @@ namespace KursachFileSaving.Models.Interfaces
         event EventHandler UpdateBlock;
         event EventHandler Cancel;
         event EventHandler<SearchEventArgs> SearchTextChanged;
+        event EventHandler<string> MessageForm;
         string SearchText { get; }
         void ShowPOs(List<PO> poList);
+        void MessageFormView(string message);
         void CloseForm();
     }
 }

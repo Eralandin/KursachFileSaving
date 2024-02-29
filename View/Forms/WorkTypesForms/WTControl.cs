@@ -29,6 +29,7 @@ namespace KursachFileSaving.View.Forms.WorkTypesForms
         public event EventHandler AddWT;
         public event EventHandler UpdateWT;
         public event EventHandler DeleteWT;
+        public event EventHandler<string> MessageForm;
         public event EventHandler<SearchEventArgs> SearchTextChanged;
         public string SearchText => WTSearchTextBox.Text;
         public void ShowWTs(List<WorkType> WTs)
@@ -46,10 +47,6 @@ namespace KursachFileSaving.View.Forms.WorkTypesForms
                 }
             }
         }
-        public void ShowMessage(string message)
-        {
-            MessageBox.Show(message);
-        }
 
         private void DGVWTs_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -60,7 +57,7 @@ namespace KursachFileSaving.View.Forms.WorkTypesForms
                 {
                     // Логика редактирования должности
                     _presenter.RowToEdit = e.RowIndex;
-                    _presenter.UpdateWT(sender, e);
+                    UpdateWT?.Invoke(sender, e);
                 }
                 else if (colName == "Delete")
                 {
@@ -68,7 +65,7 @@ namespace KursachFileSaving.View.Forms.WorkTypesForms
                     {
                         // Логика удаления должности
                         _presenter.RowToDelete = e.RowIndex;
-                        _presenter.DeleteWT(sender, e);
+                        DeleteWT?.Invoke(sender, e);
                         MessageBox.Show("Тип работ успешно удален!");
                     }
                 }
@@ -77,7 +74,7 @@ namespace KursachFileSaving.View.Forms.WorkTypesForms
 
         private void WTsAddButton_Click(object sender, EventArgs e)
         {
-            _presenter.AddWT(sender, e);
+            AddWT?.Invoke(sender, e);
         }
 
         private void WTSearchTextBox_TextChanged(object sender, EventArgs e)

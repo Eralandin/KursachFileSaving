@@ -14,10 +14,10 @@ namespace KursachFileSaving.Models.Interfaces
         event EventHandler AddJob;
         event EventHandler UpdateJob;
         event EventHandler DeleteJob;
+        event EventHandler<string> MessageForm;
         event EventHandler<SearchEventArgs> SearchTextChanged;
         string SearchText { get; }
 
         void ShowJobs(List<Jobs> jobs);
-        void ShowMessage(string message);
     }
 }

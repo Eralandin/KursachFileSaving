@@ -58,6 +58,8 @@
     <Compile Include="Models\Classes\WorkTypes.cs" />
     <Compile Include="Models\Interfaces\IBCMView.cs" />
     <Compile Include="Models\Interfaces\IBCView.cs" />
+    <Compile Include="Models\Interfaces\IECMView.cs" />
+    <Compile Include="Models\Interfaces\IECView.cs" />
     <Compile Include="Models\Interfaces\IJobsControlModuleView.cs" />
     <Compile Include="Models\Interfaces\IJobsControlView.cs" />
     <Compile Include="Models\Interfaces\IMainFormView.cs" />
@@ -68,6 +70,8 @@
     <Compile Include="Models\Interfaces\JsonFileManager.cs" />
     <Compile Include="Presenter\BCMPresenter.cs" />
     <Compile Include="Presenter\BCPresenter.cs" />
+    <Compile Include="Presenter\EmpControlModulePresenter.cs" />
+    <Compile Include="Presenter\EmpControlPresenter.cs" />
     <Compile Include="Presenter\JobControlPresenter.cs" />
     <Compile Include="Presenter\JobsControlModulePresenter.cs" />
     <Compile Include="Presenter\MainFormPresenter.cs" />
@@ -89,23 +93,29 @@
     <Compile Include="View\Forms\BlocksControlForms\BlockControlModule.Designer.cs">
       <DependentUpon>BlockControlModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Forms\ConfirmationForms\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\ConfirmationForms\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Forms\ConfirmationForms\OperationConfirmedForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Forms\ConfirmationForms\OperationConfirmedForm.Designer.cs">
       <DependentUpon>OperationConfirmedForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Forms\EmpControlForms\ECM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Forms\EmpControlForms\ECM.Designer.cs">
-      <DependentUpon>ECM.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Forms\EmpControlForms\EmpControl.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Forms\EmpControlForms\EmpControl.Designer.cs">
       <DependentUpon>EmpControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\EmpControlForms\EmpControlModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\EmpControlForms\EmpControlModule.Designer.cs">
+      <DependentUpon>EmpControlModule.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\JobsControlForms\JobsControl.cs">
       <SubType>Form</SubType>
@@ -171,14 +181,17 @@
     <EmbeddedResource Include="View\Forms\BlocksControlForms\BlockControlModule.resx">
       <DependentUpon>BlockControlModule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\ConfirmationForms\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\ConfirmationForms\OperationConfirmedForm.resx">
       <DependentUpon>OperationConfirmedForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Forms\EmpControlForms\ECM.resx">
-      <DependentUpon>ECM.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\EmpControlForms\EmpControl.resx">
       <DependentUpon>EmpControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\EmpControlForms\EmpControlModule.resx">
+      <DependentUpon>EmpControlModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\JobsControlForms\JobsControl.resx">
       <DependentUpon>JobsControl.cs</DependentUpon>

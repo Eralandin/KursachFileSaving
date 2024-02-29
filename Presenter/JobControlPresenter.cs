@@ -1,5 +1,6 @@
 ﻿using KursachFileSaving.Models.Classes;
 using KursachFileSaving.Models.Interfaces;
+using KursachFileSaving.View.Forms.ConfirmationForms;
 using KursachFileSaving.View.Forms.JobsControlForms;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,12 @@ namespace KursachFileSaving.Presenter
             _view.UpdateJob += UpdateJob;
             _view.DeleteJob += DeleteJob;
             _view.SearchTextChanged += OnSearch;
+            _view.MessageForm += MessageFormCreate;
+        }
+        private void MessageFormCreate(object sender, string e)
+        {
+            MessageForm mf = new MessageForm(e);
+            mf.ShowDialog();
         }
 
         private void OnLoad(object sender, EventArgs e)
@@ -77,7 +84,7 @@ namespace KursachFileSaving.Presenter
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Непредвиденная ошибка! " + ex.Message);
+                MessageFormCreate(this, "Непредвиденная ошибка! " + ex.Message);
                 return;
             }
         }

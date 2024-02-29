@@ -73,19 +73,21 @@ namespace KursachFileSaving.View.Forms
         private void POsMainButton_Click(object sender, EventArgs e)
         {
             List<PO> poList = JsonFileManager.LoadPOs();
+            List<Blocks> blocksList = JsonFileManager.LoadBlocks();
             NSTUMainLogo.Visible = false;
             NSTUMainLogo.Visible = false;
             SuspendLayout();
-            _presenter.OpenChildForm(new POControl(poList), panel2);
+            _presenter.OpenChildForm(new POControl(poList, blocksList), panel2);
             ResumeLayout(true);
         }
 
         private void PCsMainButton_Click(object sender, EventArgs e)
         {
+            List<Blocks> blocks = JsonFileManager.LoadBlocks();
             NSTUMainLogo.Visible = false;
             NSTUMainLogo.Visible = false;
             SuspendLayout();
-            _presenter.OpenChildForm(new BlockControl(_presenter.Blocks), panel2);
+            _presenter.OpenChildForm(new BlockControl(blocks), panel2);
             ResumeLayout(true);
         }
     }

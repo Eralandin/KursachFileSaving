@@ -18,10 +18,10 @@ namespace KursachFileSaving.View.Forms.POControlForms
     {
         private readonly POPresenter _presenter;
 
-        public POControl(List<PO> poList)
+        public POControl(List<PO> poList, List<Blocks> blocksList)
         {
             InitializeComponent();
-            _presenter = new POPresenter(this, poList);
+            _presenter = new POPresenter(this, poList, blocksList);
             ShowPOs(poList);
         }
         public event EventHandler Load;
@@ -29,6 +29,7 @@ namespace KursachFileSaving.View.Forms.POControlForms
         public event EventHandler UpdatePO;
         public event EventHandler DeletePO;
         public event EventHandler<SearchEventArgs> SearchTextChanged;
+        public event EventHandler<string> MessageForm;
 
         public string SearchText => POsSearchTextBox.Text;
         public void ShowPOs(List<PO> poList)
@@ -69,7 +70,7 @@ namespace KursachFileSaving.View.Forms.POControlForms
         }
         private void POsAddButton_Click(object sender, EventArgs e)
         {
-            _presenter.AddPO(sender, e);
+            AddPO?.Invoke(sender, e);
         }
 
         private void POsSearchTextBox_TextChanged(object sender, EventArgs e)

@@ -29,7 +29,13 @@ namespace KursachFileSaving.View.Forms.WorkTypesForms
         public event EventHandler SaveWT;
         public event EventHandler UpdateWT;
         public event EventHandler Cancel;
+        public event EventHandler<string> MessageForm;
 
+        public void MessageFormView(string message)
+        {
+            MessageForm mf = new MessageForm(message);
+            mf.ShowDialog();
+        }
         private void WTMCancelButton_Click(object sender, EventArgs e)
         {
             this.Dispose();

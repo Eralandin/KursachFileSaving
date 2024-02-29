@@ -30,8 +30,13 @@ namespace KursachFileSaving.View.Forms.POControlForms
         public event EventHandler SavePO;
         public event EventHandler UpdatePO;
         public event EventHandler Cancel;
+        public event EventHandler<string> MessageForm;
 
-
+        public void MessageFormView(string message)
+        {
+            MessageForm mf = new MessageForm(message);
+            mf.ShowDialog();
+        }
         public void CloseForm()
         {
             OperationConfirmedForm ocf = new OperationConfirmedForm();
