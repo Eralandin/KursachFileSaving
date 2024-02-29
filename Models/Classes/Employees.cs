@@ -10,7 +10,6 @@ namespace KursachFileSaving.Models.Classes
     {
         private int empCode;
         private int blockCode = 0;
-        private int appCode = 0;
         private string firstName;
         private string lastName;
         private string patronymic = "Не указано";
@@ -18,7 +17,6 @@ namespace KursachFileSaving.Models.Classes
         private string password;
         private string email;
         private int jobCode;
-        private int workCode = 0;
         private string salt;
 
         public int EmpCode
@@ -36,12 +34,6 @@ namespace KursachFileSaving.Models.Classes
         {
             get { return blockCode; }
             set { blockCode = value; }
-        }
-
-        public int AppCode
-        {
-            get { return appCode; }
-            set { appCode = value; }
         }
 
         public string FirstName
@@ -109,12 +101,6 @@ namespace KursachFileSaving.Models.Classes
         {
             get { return jobCode; }
             set { jobCode = value; }
-        }
-
-        public int WorkCode
-        {
-            get { return workCode; }
-            set { workCode = value; }
         }
 
         public string Salt

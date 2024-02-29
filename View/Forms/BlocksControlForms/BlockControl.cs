@@ -56,23 +56,30 @@ namespace KursachFileSaving.View.Forms.BlocksControlForms
 
         private void DGVBlocks_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            try
             {
-                string colName = DGVBlocks.Columns[e.ColumnIndex].Name;
-                if (colName == "Edit")
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
                 {
-                    _presenter.RowToEdit = e.RowIndex;
-                    UpdateBlock?.Invoke(sender, e);
-                }
-                else if (colName == "Delete")
-                {
-                    if (MessageBox.Show("Вы уверены, что хотите удалить этот блок?", "Удаление блока", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    string colName = DGVBlocks.Columns[e.ColumnIndex].Name;
+                    if (colName == "Edit")
                     {
-                        _presenter.RowToDelete = e.RowIndex;
-                        DeleteBlock?.Invoke(sender, e);
-                        MessageForm.Invoke(this, "Блок успешно удалён!");
+                        _presenter.RowToEdit = e.RowIndex;
+                        UpdateBlock?.Invoke(sender, e);
+                    }
+                    else if (colName == "Delete")
+                    {
+                        if (MessageBox.Show("Вы уверены, что хотите удалить этот блок?", "Удаление блока", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            _presenter.RowToDelete = e.RowIndex;
+                            DeleteBlock?.Invoke(sender, e);
+                            MessageForm?.Invoke(this, "Блок успешно удалён!");
+                        }
                     }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageForm?.Invoke(this, "Непредвиденная ошибка! " + ex.Message);
             }
         }
         private void BlocksAddButton_Click(object sender, EventArgs e)

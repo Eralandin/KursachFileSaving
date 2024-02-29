@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,15 +52,17 @@
             this.EmpEmailTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BCMCancelButton = new System.Windows.Forms.Button();
-            this.BCMUpdateButton = new System.Windows.Forms.Button();
-            this.BCMSaveButton = new System.Windows.Forms.Button();
+            this.ECMCancelButton = new System.Windows.Forms.Button();
+            this.ECMUpdateButton = new System.Windows.Forms.Button();
+            this.ECMSaveButton = new System.Windows.Forms.Button();
             this.DGVECMJobs = new System.Windows.Forms.DataGridView();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVECMJobCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVECMJobName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DGVECMJobsSearchTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -274,36 +276,38 @@
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;
             // 
-            // BCMCancelButton
+            // ECMCancelButton
             // 
-            this.BCMCancelButton.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BCMCancelButton.Location = new System.Drawing.Point(940, 456);
-            this.BCMCancelButton.Name = "BCMCancelButton";
-            this.BCMCancelButton.Size = new System.Drawing.Size(114, 39);
-            this.BCMCancelButton.TabIndex = 51;
-            this.BCMCancelButton.Text = "Отмена";
-            this.BCMCancelButton.UseVisualStyleBackColor = true;
-            this.BCMCancelButton.Click += new System.EventHandler(this.BCMCancelButton_Click);
+            this.ECMCancelButton.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ECMCancelButton.Location = new System.Drawing.Point(940, 456);
+            this.ECMCancelButton.Name = "ECMCancelButton";
+            this.ECMCancelButton.Size = new System.Drawing.Size(114, 39);
+            this.ECMCancelButton.TabIndex = 51;
+            this.ECMCancelButton.Text = "Отмена";
+            this.ECMCancelButton.UseVisualStyleBackColor = true;
+            this.ECMCancelButton.Click += new System.EventHandler(this.ECMCancelButton_Click);
             // 
-            // BCMUpdateButton
+            // ECMUpdateButton
             // 
-            this.BCMUpdateButton.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BCMUpdateButton.Location = new System.Drawing.Point(820, 456);
-            this.BCMUpdateButton.Name = "BCMUpdateButton";
-            this.BCMUpdateButton.Size = new System.Drawing.Size(114, 39);
-            this.BCMUpdateButton.TabIndex = 50;
-            this.BCMUpdateButton.Text = "Обновить";
-            this.BCMUpdateButton.UseVisualStyleBackColor = true;
+            this.ECMUpdateButton.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ECMUpdateButton.Location = new System.Drawing.Point(820, 456);
+            this.ECMUpdateButton.Name = "ECMUpdateButton";
+            this.ECMUpdateButton.Size = new System.Drawing.Size(114, 39);
+            this.ECMUpdateButton.TabIndex = 50;
+            this.ECMUpdateButton.Text = "Обновить";
+            this.ECMUpdateButton.UseVisualStyleBackColor = true;
+            this.ECMUpdateButton.Click += new System.EventHandler(this.ECMUpdateButton_Click);
             // 
-            // BCMSaveButton
+            // ECMSaveButton
             // 
-            this.BCMSaveButton.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BCMSaveButton.Location = new System.Drawing.Point(700, 456);
-            this.BCMSaveButton.Name = "BCMSaveButton";
-            this.BCMSaveButton.Size = new System.Drawing.Size(114, 39);
-            this.BCMSaveButton.TabIndex = 49;
-            this.BCMSaveButton.Text = "Создать";
-            this.BCMSaveButton.UseVisualStyleBackColor = true;
+            this.ECMSaveButton.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ECMSaveButton.Location = new System.Drawing.Point(700, 456);
+            this.ECMSaveButton.Name = "ECMSaveButton";
+            this.ECMSaveButton.Size = new System.Drawing.Size(114, 39);
+            this.ECMSaveButton.TabIndex = 49;
+            this.ECMSaveButton.Text = "Создать";
+            this.ECMSaveButton.UseVisualStyleBackColor = true;
+            this.ECMSaveButton.Click += new System.EventHandler(this.ECMSaveButton_Click);
             // 
             // DGVECMJobs
             // 
@@ -324,9 +328,9 @@
             // Number
             // 
             this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Number.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Number.DefaultCellStyle = dataGridViewCellStyle1;
             this.Number.HeaderText = "Номер";
             this.Number.Name = "Number";
             this.Number.ReadOnly = true;
@@ -335,9 +339,9 @@
             // DGVECMJobCode
             // 
             this.DGVECMJobCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.DGVECMJobCode.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.DGVECMJobCode.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVECMJobCode.HeaderText = "Код должности";
             this.DGVECMJobCode.Name = "DGVECMJobCode";
             this.DGVECMJobCode.ReadOnly = true;
@@ -345,9 +349,9 @@
             // DGVECMJobName
             // 
             this.DGVECMJobName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.DGVECMJobName.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.DGVECMJobName.DefaultCellStyle = dataGridViewCellStyle3;
             this.DGVECMJobName.HeaderText = "Наименование должности";
             this.DGVECMJobName.Name = "DGVECMJobName";
             this.DGVECMJobName.ReadOnly = true;
@@ -359,6 +363,7 @@
             this.DGVECMJobsSearchTextBox.Name = "DGVECMJobsSearchTextBox";
             this.DGVECMJobsSearchTextBox.Size = new System.Drawing.Size(278, 33);
             this.DGVECMJobsSearchTextBox.TabIndex = 54;
+            this.DGVECMJobsSearchTextBox.TextChanged += new System.EventHandler(this.DGVECMJobsSearchTextBox_TextChanged);
             // 
             // label12
             // 
@@ -371,18 +376,41 @@
             this.label12.TabIndex = 53;
             this.label12.Text = "Поиск:";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(828, 221);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(185, 33);
+            this.comboBox1.TabIndex = 56;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label11.Location = new System.Drawing.Point(712, 224);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(115, 25);
+            this.label11.TabIndex = 55;
+            this.label11.Text = "Код блока:";
+            // 
             // EmpControlModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1066, 507);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.DGVECMJobsSearchTextBox);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.DGVECMJobs);
-            this.Controls.Add(this.BCMCancelButton);
-            this.Controls.Add(this.BCMUpdateButton);
-            this.Controls.Add(this.BCMSaveButton);
+            this.Controls.Add(this.ECMCancelButton);
+            this.Controls.Add(this.ECMUpdateButton);
+            this.Controls.Add(this.ECMSaveButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.EmpEmailTextBox);
             this.Controls.Add(this.label10);
@@ -403,6 +431,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EmpControlModule";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmpControlModule";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -437,14 +466,16 @@
         public System.Windows.Forms.TextBox EmpEmailTextBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button BCMCancelButton;
-        public System.Windows.Forms.Button BCMUpdateButton;
-        public System.Windows.Forms.Button BCMSaveButton;
+        private System.Windows.Forms.Button ECMCancelButton;
+        public System.Windows.Forms.Button ECMUpdateButton;
+        public System.Windows.Forms.Button ECMSaveButton;
         public System.Windows.Forms.DataGridView DGVECMJobs;
         private System.Windows.Forms.DataGridViewTextBoxColumn Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVECMJobCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn DGVECMJobName;
         public System.Windows.Forms.TextBox DGVECMJobsSearchTextBox;
         public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label11;
     }
 }

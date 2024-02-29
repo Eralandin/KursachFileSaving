@@ -8,8 +8,17 @@ using static KursachFileSaving.View.Forms.JobsControlForms.JobsControl;
 
 namespace KursachFileSaving.Models.Interfaces
 {
-    internal interface IECMView
+    public interface IECMView
     {
+        string EmpCode { get; set; }
+        string BlockCode { get; set; }
+        string FirstName { get; set; }
+        string LastName { get; set; }
+        string Patronymic { get; set; }
+        string Login { get; set; }
+        string Password { get; set; }
+        string Email { get; set; }
+        string JobCode { get; set; }
 
         event EventHandler SaveEmp;
         event EventHandler UpdateEmp;
@@ -17,7 +26,7 @@ namespace KursachFileSaving.Models.Interfaces
         event EventHandler<SearchEventArgs> SearchTextChanged;
         event EventHandler<string> MessageForm;
         string SearchText { get; }
-        void ShowEmps(List<Employees> empsList);
+        void ShowJobs(List<Jobs> jobsList);
         void MessageFormView(string message);
         void CloseForm();
     }

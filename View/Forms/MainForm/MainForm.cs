@@ -15,6 +15,8 @@ using System.IO;
 using KursachFileSaving.View.Forms.WorkTypesForms;
 using KursachFileSaving.View.Forms.POControlForms;
 using KursachFileSaving.View.Forms.BlocksControlForms;
+using KursachFileSaving.View.Forms.EmpControlForms;
+using KursachFileSaving.View.Forms.AppsControlForms;
 
 namespace KursachFileSaving.View.Forms
 {
@@ -88,6 +90,26 @@ namespace KursachFileSaving.View.Forms
             NSTUMainLogo.Visible = false;
             SuspendLayout();
             _presenter.OpenChildForm(new BlockControl(blocks), panel2);
+            ResumeLayout(true);
+        }
+
+        private void EmployeesMainButton_Click(object sender, EventArgs e)
+        {
+            List<Employees> employees = JsonFileManager.LoadEmps();
+            NSTUMainLogo.Visible = false;
+            NSTUMainLogo.Visible = false;
+            SuspendLayout();
+            _presenter.OpenChildForm(new EmpControl(employees), panel2);
+            ResumeLayout(true);
+        }
+
+        private void AppsMainButton_Click(object sender, EventArgs e)
+        {
+            List<Apps> apps = JsonFileManager.LoadApps();
+            NSTUMainLogo.Visible = false;
+            NSTUMainLogo.Visible = false;
+            SuspendLayout();
+            _presenter.OpenChildForm(new AppsControl(apps), panel2);
             ResumeLayout(true);
         }
     }

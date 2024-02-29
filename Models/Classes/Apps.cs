@@ -13,7 +13,8 @@ namespace KursachFileSaving.Models.Classes
         private int day;
         private int month;
         private int year;
-        private int empCode;
+        private int blockCode;
+        private int workType;
 
         public int AppCode
         {
@@ -21,7 +22,7 @@ namespace KursachFileSaving.Models.Classes
             set
             {
                 if (value == 0)
-                    throw new ArgumentException("Код приложения не может быть равен нулю!");
+                    throw new ArgumentException("Код заявки не может быть равен нулю!");
                 appCode = value;
             }
         }
@@ -29,7 +30,12 @@ namespace KursachFileSaving.Models.Classes
         public string AppComment
         {
             get { return appComment; }
-            set { appComment = value; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentException("Комментарий к заявке необходимо заполнить!");
+                appComment = value;
+            }
         }
 
         public int Day
@@ -65,10 +71,25 @@ namespace KursachFileSaving.Models.Classes
             }
         }
 
-        public int EmpCode
+        public int BlockCode
         {
-            get { return empCode; }
-            set { empCode = value; }
+            get { return blockCode; }
+            set 
+            {
+                if (value == 0)
+                    throw new ArgumentException("Код блока не может быть равен нулю!");
+                blockCode = value;
+            }
+        }
+        public int WorkType
+        {
+            get { return workType; }
+            set
+            {
+                if (value == 0)
+                    throw new ArgumentException("Код типа работы не может быть равен нулю!");
+                workType = value;
+            }
         }
     }
 }

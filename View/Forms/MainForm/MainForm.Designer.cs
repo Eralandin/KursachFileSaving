@@ -251,6 +251,7 @@
             this.AppsMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AppsMainButton.TabIndex = 7;
             this.AppsMainButton.TabStop = false;
+            this.AppsMainButton.Click += new System.EventHandler(this.AppsMainButton_Click);
             // 
             // EmployeesMainButton
             // 
@@ -264,6 +265,7 @@
             this.EmployeesMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.EmployeesMainButton.TabIndex = 6;
             this.EmployeesMainButton.TabStop = false;
+            this.EmployeesMainButton.Click += new System.EventHandler(this.EmployeesMainButton_Click);
             // 
             // PCsMainButton
             // 

@@ -74,6 +74,19 @@ namespace KursachFileSaving.Models.Interfaces
                 return new List<Blocks> { };
             }
         }
+        public static List<Apps> LoadApps()
+        {
+            if (File.Exists(FilePath))
+            {
+                string json = File.ReadAllText(FilePath);
+                var data = JsonConvert.DeserializeObject<dynamic>(json);
+                return data.Apps.ToObject<List<Apps>>();
+            }
+            else
+            {
+                return new List<Apps> { };
+            }
+        }
         public static List<WorkType> LoadWTs()
         {
             if (File.Exists(FilePath))
@@ -84,6 +97,19 @@ namespace KursachFileSaving.Models.Interfaces
             else
             {
                 return new List<WorkType>();
+            }
+        }
+        public static List<Employees> LoadEmps()
+        {
+            if (File.Exists(FilePath))
+            {
+                string json = File.ReadAllText(FilePath);
+                var data = JsonConvert.DeserializeObject<dynamic>(json);
+                return data.Employees.ToObject<List<Employees>>();
+            }
+            else
+            {
+                return new List<Employees> { };
             }
         }
         public static List<PO> LoadPOs()
@@ -121,6 +147,18 @@ namespace KursachFileSaving.Models.Interfaces
         {
             var (apps, blocks, employees, jobs, journal, po, workTypesModel) = LoadData();
             blocks = blockslist;
+            SaveData(apps, blocks, employees, jobs, journal, po, workTypesModel);
+        }
+        public static void SaveEmps(List<Employees> empslist, string filePath)
+        {
+            var (apps, blocks, employees, jobs, journal, po, workTypesModel) = LoadData();
+            employees = empslist;
+            SaveData(apps, blocks, employees, jobs, journal, po, workTypesModel);
+        }
+        public static void SaveApps(List<Apps> appslist, string filePath)
+        {
+            var (apps, blocks, employees, jobs, journal, po, workTypesModel) = LoadData();
+            apps = appslist;
             SaveData(apps, blocks, employees, jobs, journal, po, workTypesModel);
         }
         public static void InitializeDataIfFileNotExists()
