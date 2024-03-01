@@ -64,6 +64,9 @@
     <Compile Include="Models\Interfaces\IECView.cs" />
     <Compile Include="Models\Interfaces\IJobsControlModuleView.cs" />
     <Compile Include="Models\Interfaces\IJobsControlView.cs" />
+    <Compile Include="Models\Interfaces\IJournalControlModuleView.cs" />
+    <Compile Include="Models\Interfaces\IJournalControlView.cs" />
+    <Compile Include="Models\Interfaces\ILoginFormView.cs" />
     <Compile Include="Models\Interfaces\IMainFormView.cs" />
     <Compile Include="Models\Interfaces\IPOModuleView.cs" />
     <Compile Include="Models\Interfaces\IPOView.cs" />
@@ -78,6 +81,9 @@
     <Compile Include="Presenter\EmpControlPresenter.cs" />
     <Compile Include="Presenter\JobControlPresenter.cs" />
     <Compile Include="Presenter\JobsControlModulePresenter.cs" />
+    <Compile Include="Presenter\JournalControlModulePresenter.cs" />
+    <Compile Include="Presenter\JournalControlPresenter.cs" />
+    <Compile Include="Presenter\LoginFormPresenter.cs" />
     <Compile Include="Presenter\MainFormPresenter.cs" />
     <Compile Include="Presenter\POCMPresenter.cs" />
     <Compile Include="Presenter\POPresenter.cs" />
@@ -144,6 +150,24 @@
     </Compile>
     <Compile Include="View\Forms\JobsControlForms\JobsControlModule.Designer.cs">
       <DependentUpon>JobsControlModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\JournalControlForms\JournalControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\JournalControlForms\JournalControl.Designer.cs">
+      <DependentUpon>JournalControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\JournalControlForms\JournalControlModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\JournalControlForms\JournalControlModule.Designer.cs">
+      <DependentUpon>JournalControlModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Forms\LoginForms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Forms\LoginForms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Forms\MainForm\MainForm.cs">
       <SubType>Form</SubType>
@@ -220,6 +244,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\JobsControlForms\JobsControlModule.resx">
       <DependentUpon>JobsControlModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\JournalControlForms\JournalControl.resx">
+      <DependentUpon>JournalControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\JournalControlForms\JournalControlModule.resx">
+      <DependentUpon>JournalControlModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Forms\LoginForms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Forms\MainForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -340,8 +373,6 @@
   <ItemGroup>
     <None Include="Resources\GIFГалочкаЗелёная.gif" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\Forms\JournalControlForms\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

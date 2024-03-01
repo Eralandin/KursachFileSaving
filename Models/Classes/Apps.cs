@@ -14,7 +14,7 @@ namespace KursachFileSaving.Models.Classes
         private int month;
         private int year;
         private int blockCode;
-        private int workType;
+        private string workType;
 
         public int AppCode
         {
@@ -81,13 +81,13 @@ namespace KursachFileSaving.Models.Classes
                 blockCode = value;
             }
         }
-        public int WorkType
+        public string WorkType
         {
             get { return workType; }
             set
             {
-                if (value == 0)
-                    throw new ArgumentException("Код типа работы не может быть равен нулю!");
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentException("Тип работы необходимо заполнить!");
                 workType = value;
             }
         }

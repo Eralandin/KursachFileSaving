@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static KursachFileSaving.View.Forms.JobsControlForms.JobsControl;
 
 namespace KursachFileSaving.Presenter
@@ -69,38 +70,85 @@ namespace KursachFileSaving.Presenter
         }
         public void UpdateEmp(object sender, EventArgs e)
         {
-            EmpControlModule moduleForm = new EmpControlModule(_empsList, RowToEdit);
-            moduleForm.EmpCodeTextBox.Enabled = false;
-            moduleForm.EmpCodeTextBox.Text = _empsList[RowToEdit].EmpCode.ToString();
-            moduleForm.EmpLastnameTextBox.Text = _empsList[RowToEdit].LastName.ToString();
-            moduleForm.EmpNameTextBox.Text = _empsList[RowToEdit].FirstName.ToString();
-            moduleForm.EmpPatronymicTextBox.Text = _empsList[RowToEdit].Patronymic.ToString();
-            moduleForm.EmpEmailTextBox.Text = _empsList[RowToEdit].Email.ToString();
-            moduleForm.EmpLoginTextBox.Text = _empsList[RowToEdit].Login.ToString();
-            moduleForm.EmpPasswordTextBox.Enabled = false;
+            if (_empsList[RowToDelete].JobCode == "Системный администратор")
+            {
+                if (MessageBox.Show("Вы уверены, что хотите изменить этого системного администратора?", "Изменение сотрудника", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    EmpControlModule moduleForm = new EmpControlModule(_empsList, RowToEdit);
+                    moduleForm.EmpCodeTextBox.Enabled = false;
+                    moduleForm.EmpCodeTextBox.Text = _empsList[RowToEdit].EmpCode.ToString();
+                    moduleForm.EmpLastnameTextBox.Text = _empsList[RowToEdit].LastName.ToString();
+                    moduleForm.EmpNameTextBox.Text = _empsList[RowToEdit].FirstName.ToString();
+                    moduleForm.EmpPatronymicTextBox.Text = _empsList[RowToEdit].Patronymic.ToString();
+                    moduleForm.EmpEmailTextBox.Text = _empsList[RowToEdit].Email.ToString();
+                    moduleForm.EmpLoginTextBox.Text = _empsList[RowToEdit].Login.ToString();
+                    moduleForm.EmpPasswordTextBox.Enabled = false;
 
-            if (_empsList[RowToEdit].JobCode != 0)
-            {
-                moduleForm.JobCodeCombobox.Items.Add(_empsList[RowToEdit].JobCode.ToString());
+                    if (_empsList[RowToEdit].JobCode != "")
+                    {
+                        moduleForm.JobCodeCombobox.Items.Add(_empsList[RowToEdit].JobCode.ToString());
+                    }
+                    if (_empsList[RowToEdit].BlockCode != 0)
+                    {
+                        moduleForm.comboBox1.Items.Add(_empsList[RowToEdit].BlockCode.ToString());
+                    }
+                    moduleForm.JobCodeCombobox.Sorted = true;
+                    moduleForm.JobCodeCombobox.Enabled = false;
+                    moduleForm.JobCodeCombobox.Text = _empsList[RowToEdit].JobCode;
+                    moduleForm.comboBox1.Sorted = true;
+                    moduleForm.ECMSaveButton.Enabled = false;
+                    moduleForm.ShowDialog();
+                    LoadEmps(_empsList);
+                }
             }
-            if (_empsList[RowToEdit].BlockCode != 0)
+            else
             {
-                moduleForm.comboBox1.Items.Add(_empsList[RowToEdit].BlockCode.ToString());
+                EmpControlModule moduleForm = new EmpControlModule(_empsList, RowToEdit);
+                moduleForm.EmpCodeTextBox.Enabled = false;
+                moduleForm.EmpCodeTextBox.Text = _empsList[RowToEdit].EmpCode.ToString();
+                moduleForm.EmpLastnameTextBox.Text = _empsList[RowToEdit].LastName.ToString();
+                moduleForm.EmpNameTextBox.Text = _empsList[RowToEdit].FirstName.ToString();
+                moduleForm.EmpPatronymicTextBox.Text = _empsList[RowToEdit].Patronymic.ToString();
+                moduleForm.EmpEmailTextBox.Text = _empsList[RowToEdit].Email.ToString();
+                moduleForm.EmpLoginTextBox.Text = _empsList[RowToEdit].Login.ToString();
+                moduleForm.EmpPasswordTextBox.Enabled = false;
+
+                if (_empsList[RowToEdit].JobCode != "")
+                {
+                    moduleForm.JobCodeCombobox.Items.Add(_empsList[RowToEdit].JobCode.ToString());
+                }
+                if (_empsList[RowToEdit].BlockCode != 0)
+                {
+                    moduleForm.comboBox1.Items.Add(_empsList[RowToEdit].BlockCode.ToString());
+                }
+                moduleForm.JobCodeCombobox.Sorted = true;
+                moduleForm.comboBox1.Sorted = true;
+                moduleForm.ECMSaveButton.Enabled = false;
+                moduleForm.ShowDialog();
+                LoadEmps(_empsList);
             }
-            moduleForm.JobCodeCombobox.Sorted = true;
-            moduleForm.comboBox1.Sorted = true;
-            moduleForm.ECMSaveButton.Enabled = false;
-            moduleForm.ShowDialog();
-            LoadEmps(_empsList);
         }
 
         public void DeleteEmp(object sender, EventArgs e)
         {
             try
             {
-                _empsList.Remove(_empsList[RowToDelete]);
-                JsonFileManager.SaveEmps(_empsList, "data.json");
-                LoadEmps(_empsList);
+                if (_empsList[RowToDelete].JobCode != "Системный администратор")
+                {
+                    _empsList.Remove(_empsList[RowToDelete]);
+                    JsonFileManager.SaveEmps(_empsList, "data.json");
+                    LoadEmps(_empsList);
+                    _view.OperationConfirmed();
+                }
+                else
+                {
+                    throw new TaskCanceledException("Вы не можете удалить системного администратора!");
+                }
+            }
+            catch (TaskCanceledException ex)
+            {
+                _view.MessageFormView("Ошибка! " + ex.Message);
+                return;
             }
             catch (Exception ex)
             {

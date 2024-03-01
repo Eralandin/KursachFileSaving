@@ -45,9 +45,6 @@ namespace KursachFileSaving.Presenter
 
                 JsonFileManager.SavePOs(poData, "data.json");
 
-                // Оповещение пользователя об успешном сохранении
-                MessageBox.Show("Новое ПО успешно сохранено!");
-
                 // Закрытие формы после сохранения
                 _view.CloseForm();
             }

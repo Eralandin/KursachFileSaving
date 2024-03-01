@@ -1,6 +1,7 @@
 ﻿using KursachFileSaving.Models.Classes;
 using KursachFileSaving.Models.Interfaces;
 using KursachFileSaving.Presenter;
+using KursachFileSaving.View.Forms.ConfirmationForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +48,11 @@ namespace KursachFileSaving.View.Forms.POControlForms
                 }
             }
         }
+        private void MessageFormCreate(object sender, string message)
+        {
+            MessageForm mf = new MessageForm(message);
+            mf.ShowDialog();
+        }
         private void DGVPOs_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -63,7 +69,7 @@ namespace KursachFileSaving.View.Forms.POControlForms
                     {
                         _presenter.RowToDelete = e.RowIndex;
                         _presenter.DeletePO(sender, e);
-                        MessageBox.Show("ПО успешно удалено!");
+                        MessageFormCreate(this, "ПО успешно удалено!");
                     }
                 }
             }

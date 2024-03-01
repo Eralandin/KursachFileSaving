@@ -38,7 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ExitMainButton = new System.Windows.Forms.PictureBox();
             this.MainFormMinimize = new System.Windows.Forms.PictureBox();
             this.MainFormClose = new System.Windows.Forms.PictureBox();
             this.EFYTopMainLabel = new System.Windows.Forms.Label();
@@ -54,7 +53,6 @@
             this.NSTUMainLogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ExitMainButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainFormMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainFormClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.JournalMainButton)).BeginInit();
@@ -79,7 +77,6 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.ExitMainButton);
             this.panel1.Controls.Add(this.MainFormMinimize);
             this.panel1.Controls.Add(this.MainFormClose);
             this.panel1.Controls.Add(this.EFYTopMainLabel);
@@ -183,16 +180,6 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Типы работ";
             // 
-            // ExitMainButton
-            // 
-            this.ExitMainButton.Image = global::KursachFileSaving.Properties.Resources.exit;
-            this.ExitMainButton.Location = new System.Drawing.Point(971, 0);
-            this.ExitMainButton.Name = "ExitMainButton";
-            this.ExitMainButton.Size = new System.Drawing.Size(27, 27);
-            this.ExitMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ExitMainButton.TabIndex = 26;
-            this.ExitMainButton.TabStop = false;
-            // 
             // MainFormMinimize
             // 
             this.MainFormMinimize.Image = global::KursachFileSaving.Properties.Resources.Svern;
@@ -238,6 +225,7 @@
             this.JournalMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.JournalMainButton.TabIndex = 8;
             this.JournalMainButton.TabStop = false;
+            this.JournalMainButton.Click += new System.EventHandler(this.JournalMainButton_Click);
             // 
             // AppsMainButton
             // 
@@ -370,7 +358,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ExitMainButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainFormMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainFormClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.JournalMainButton)).EndInit();
@@ -402,7 +389,6 @@
         private System.Windows.Forms.Label EFYTopMainLabel;
         private System.Windows.Forms.PictureBox MainFormMinimize;
         private System.Windows.Forms.PictureBox MainFormClose;
-        private System.Windows.Forms.PictureBox ExitMainButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

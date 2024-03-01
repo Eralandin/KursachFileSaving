@@ -29,6 +29,15 @@ namespace KursachFileSaving.Presenter
         public MainFormPresenter(IMainFormView view)
         {
             _view = view ?? throw new ArgumentNullException(nameof(view));
+            _view.Load += LoadDataFromJson;
+        }
+        private void LoadDataFromJson(object sender, EventArgs e)
+        {
+            // Загрузка данных из файла data.json
+            var (apps, blocks, employees, jobs, journal, po, workTypesModel) = JsonFileManager.LoadData();
+
+            // Передача данных презентеру
+            InitializeData(apps, blocks, employees, jobs, journal, po, workTypesModel);
         }
 
         public void InitializeData(List<Apps> apps, List<Blocks> blocks, List<Employees> employees, List<Jobs> jobs, List<Journal> journal, List<PO> po, List<WorkType> workTypesModel)

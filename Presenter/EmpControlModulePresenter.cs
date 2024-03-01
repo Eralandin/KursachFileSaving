@@ -36,52 +36,31 @@ namespace KursachFileSaving.Presenter
             MessageForm mf = new MessageForm(message);
             mf.ShowDialog();
         }
-        public string EncryptPassword(string password, string salt)
+        private string HashPassword(string password, string salt)
         {
-            using (SHA256 sha256 = SHA256.Create())
+            using (var sha256 = SHA256.Create())
             {
-                // Конкатенируем пароль и соль
-                string saltedPassword = password + salt;
-
-                // Преобразуем комбинацию пароля и соли в массив байтов
-                byte[] bytes = Encoding.UTF8.GetBytes(saltedPassword);
-
-                // Вычисляем хэш
-                byte[] hash = sha256.ComputeHash(bytes);
-
-                // Преобразуем хэш в строку Hexadecimal
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < hash.Length; i++)
-                {
-                    builder.Append(hash[i].ToString("x2"));
-                }
-
-                // Возвращаем зашифрованный пароль
-                return builder.ToString();
+                byte[] saltBytes = Convert.FromBase64String(salt);
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password + salt);
+                byte[] hashedPasswordBytes = sha256.ComputeHash(passwordBytes);
+                return Convert.ToBase64String(hashedPasswordBytes);
             }
         }
         // Метод для генерации случайной соли
-        public string GenerateSalt(int size)
+        private string GenerateSalt()
         {
-            // Создаем объект RNGCryptoServiceProvider для генерации случайных байтов
-            using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
+            byte[] salt = new byte[32];
+            using (var rng = new RNGCryptoServiceProvider())
             {
-                byte[] saltBytes = new byte[size];
-
-                // Заполняем массив байтов случайными значениями
-                rng.GetBytes(saltBytes);
-
-                // Преобразуем байты в строку Hexadecimal
-                string salt = BitConverter.ToString(saltBytes).Replace("-", "");
-
-                return salt;
+                rng.GetBytes(salt);
             }
+            return Convert.ToBase64String(salt);
         }
         private void SaveEmp(object sender, EventArgs e)
         {
             try
             {
-                string salt = GenerateSalt(16);
+                string salt = GenerateSalt();
                 Employees emp = new Employees
                 {
                     // Присваивание значений из представления
@@ -92,9 +71,9 @@ namespace KursachFileSaving.Presenter
                     Patronymic = _view.Patronymic,
                     Login = _view.Login,
                     Salt = salt,
-                    Password = EncryptPassword(_view.Password, salt),
+                    Password = HashPassword(_view.Password, salt),
                     Email = _view.Email,
-                    JobCode = int.Parse(_view.JobCode),
+                    JobCode = _view.JobCode.Split(new string[] { ". " }, StringSplitOptions.None)[1]
                 };
                 empList.Add(emp);
 
@@ -118,29 +97,52 @@ namespace KursachFileSaving.Presenter
         {
             try
             {
-                string salt = GenerateSalt(16);
                 if (_view.JobCode == "")
                 {
                     _view.MessageFormView("Введите код должности!");
                     return;
                 }
-                Employees emp = new Employees
+                if (_view.JobCode == "Системный администратор")
                 {
-                    // Присваивание значений из представления
-                    EmpCode = int.Parse(_view.EmpCode),
-                    BlockCode = int.Parse(_view.BlockCode),
-                    FirstName = _view.FirstName,
-                    LastName = _view.LastName,
-                    Patronymic = _view.Patronymic,
-                    Login = _view.Login,
-                    Salt = empList[RowToEdit].Salt,
-                    Password = empList[RowToEdit].Password,
-                    Email = _view.Email,
-                    JobCode = int.Parse(_view.JobCode),
-                };
-                empList.RemoveAt(RowToEdit);
-                empList.Insert(RowToEdit, emp);
-                JsonFileManager.SaveEmps(empList, "data.json");
+                    Employees emp = new Employees
+                    {
+                        // Присваивание значений из представления
+                        EmpCode = int.Parse(_view.EmpCode),
+                        BlockCode = int.Parse(_view.BlockCode),
+                        FirstName = _view.FirstName,
+                        LastName = _view.LastName,
+                        Patronymic = _view.Patronymic,
+                        Login = _view.Login,
+                        Salt = empList[RowToEdit].Salt,
+                        Password = empList[RowToEdit].Password,
+                        Email = _view.Email,
+                        JobCode = _view.JobCode
+                    };
+                    empList.RemoveAt(RowToEdit);
+                    empList.Insert(RowToEdit, emp);
+                    JsonFileManager.SaveEmps(empList, "data.json");
+                }
+                else
+                {
+                    Employees emp = new Employees
+                    {
+                        // Присваивание значений из представления
+                        EmpCode = int.Parse(_view.EmpCode),
+                        BlockCode = int.Parse(_view.BlockCode),
+                        FirstName = _view.FirstName,
+                        LastName = _view.LastName,
+                        Patronymic = _view.Patronymic,
+                        Login = _view.Login,
+                        Salt = empList[RowToEdit].Salt,
+                        Password = empList[RowToEdit].Password,
+                        Email = _view.Email,
+                        JobCode = _view.JobCode.Split(new string[] { ". " }, StringSplitOptions.None)[1]
+                    };
+                    empList.RemoveAt(RowToEdit);
+                    empList.Insert(RowToEdit, emp);
+                    JsonFileManager.SaveEmps(empList, "data.json");
+                }
+                
                 _view.CloseForm();
             }
             catch (ArgumentException ex)

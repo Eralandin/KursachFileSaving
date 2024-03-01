@@ -45,10 +45,10 @@
             this.EmpsBotLabel = new System.Windows.Forms.Label();
             this.EmpsSearchTextBox = new System.Windows.Forms.TextBox();
             this.BotBlocksPanel = new System.Windows.Forms.Panel();
-            this.EmpsAddButton = new KursachFileSaving.View.Parts.CustomerButton();
             this.DGVEmps = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.EmpsAddButton = new KursachFileSaving.View.Parts.CustomerButton();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmpLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,8 +61,8 @@
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.BotBlocksPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EmpsAddButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVEmps)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmpsAddButton)).BeginInit();
             this.SuspendLayout();
             // 
             // EmpsSearchLabel
@@ -108,19 +108,6 @@
             this.BotBlocksPanel.Name = "BotBlocksPanel";
             this.BotBlocksPanel.Size = new System.Drawing.Size(1050, 35);
             this.BotBlocksPanel.TabIndex = 12;
-            // 
-            // EmpsAddButton
-            // 
-            this.EmpsAddButton.Image = global::KursachFileSaving.Properties.Resources.PlusNormal;
-            this.EmpsAddButton.ImageHover = global::KursachFileSaving.Properties.Resources.PlusHover;
-            this.EmpsAddButton.ImageNormal = global::KursachFileSaving.Properties.Resources.PlusNormal;
-            this.EmpsAddButton.Location = new System.Drawing.Point(1019, 3);
-            this.EmpsAddButton.Name = "EmpsAddButton";
-            this.EmpsAddButton.Size = new System.Drawing.Size(28, 28);
-            this.EmpsAddButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.EmpsAddButton.TabIndex = 10;
-            this.EmpsAddButton.TabStop = false;
-            this.EmpsAddButton.Click += new System.EventHandler(this.EmpsAddButton_Click);
             // 
             // DGVEmps
             // 
@@ -182,6 +169,19 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
             // 
+            // EmpsAddButton
+            // 
+            this.EmpsAddButton.Image = global::KursachFileSaving.Properties.Resources.PlusNormal;
+            this.EmpsAddButton.ImageHover = global::KursachFileSaving.Properties.Resources.PlusHover;
+            this.EmpsAddButton.ImageNormal = global::KursachFileSaving.Properties.Resources.PlusNormal;
+            this.EmpsAddButton.Location = new System.Drawing.Point(1019, 3);
+            this.EmpsAddButton.Name = "EmpsAddButton";
+            this.EmpsAddButton.Size = new System.Drawing.Size(28, 28);
+            this.EmpsAddButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.EmpsAddButton.TabIndex = 10;
+            this.EmpsAddButton.TabStop = false;
+            this.EmpsAddButton.Click += new System.EventHandler(this.EmpsAddButton_Click);
+            // 
             // Number
             // 
             this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -192,51 +192,56 @@
             this.Number.HeaderText = "Номер";
             this.Number.Name = "Number";
             this.Number.ReadOnly = true;
-            this.Number.Width = 70;
+            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Number.Width = 51;
             // 
             // EmployeeCode
             // 
-            this.EmployeeCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.EmployeeCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
             this.EmployeeCode.DefaultCellStyle = dataGridViewCellStyle3;
             this.EmployeeCode.HeaderText = "Код сотрудника";
             this.EmployeeCode.Name = "EmployeeCode";
             this.EmployeeCode.ReadOnly = true;
-            this.EmployeeCode.Width = 115;
+            this.EmployeeCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.EmployeeCode.Width = 5;
             // 
             // EmpLastName
             // 
-            this.EmpLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.EmpLastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
             this.EmpLastName.DefaultCellStyle = dataGridViewCellStyle4;
             this.EmpLastName.HeaderText = "Фамилия сотрудника";
             this.EmpLastName.Name = "EmpLastName";
             this.EmpLastName.ReadOnly = true;
-            this.EmpLastName.Width = 5;
+            this.EmpLastName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.EmpLastName.Width = 123;
             // 
             // EmpName
             // 
-            this.EmpName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.EmpName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Firebrick;
             this.EmpName.DefaultCellStyle = dataGridViewCellStyle5;
             this.EmpName.HeaderText = "Имя Сотрудника";
             this.EmpName.Name = "EmpName";
             this.EmpName.ReadOnly = true;
-            this.EmpName.Width = 5;
+            this.EmpName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.EmpName.Width = 99;
             // 
             // EmpPatronymic
             // 
-            this.EmpPatronymic.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.EmpPatronymic.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Firebrick;
             this.EmpPatronymic.DefaultCellStyle = dataGridViewCellStyle6;
             this.EmpPatronymic.HeaderText = "Отчество сотрудника";
             this.EmpPatronymic.Name = "EmpPatronymic";
             this.EmpPatronymic.ReadOnly = true;
-            this.EmpPatronymic.Width = 5;
+            this.EmpPatronymic.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.EmpPatronymic.Width = 125;
             // 
             // EmpLogin
             // 
@@ -247,6 +252,7 @@
             this.EmpLogin.HeaderText = "Логин сотрудника";
             this.EmpLogin.Name = "EmpLogin";
             this.EmpLogin.ReadOnly = true;
+            this.EmpLogin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.EmpLogin.Width = 5;
             // 
             // EmpEmail
@@ -258,14 +264,16 @@
             this.EmpEmail.HeaderText = "E-mail сотрудника";
             this.EmpEmail.Name = "EmpEmail";
             this.EmpEmail.ReadOnly = true;
+            this.EmpEmail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // EmpJobCode
             // 
             this.EmpJobCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.EmpJobCode.HeaderText = "Код должности";
+            this.EmpJobCode.HeaderText = "Должность";
             this.EmpJobCode.Name = "EmpJobCode";
             this.EmpJobCode.ReadOnly = true;
-            this.EmpJobCode.Width = 112;
+            this.EmpJobCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.EmpJobCode.Width = 78;
             // 
             // EmpBlockCode
             // 
@@ -273,7 +281,8 @@
             this.EmpBlockCode.HeaderText = "Код блока";
             this.EmpBlockCode.Name = "EmpBlockCode";
             this.EmpBlockCode.ReadOnly = true;
-            this.EmpBlockCode.Width = 86;
+            this.EmpBlockCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.EmpBlockCode.Width = 67;
             // 
             // Edit
             // 
@@ -315,8 +324,8 @@
             this.Text = "ECM";
             this.BotBlocksPanel.ResumeLayout(false);
             this.BotBlocksPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.EmpsAddButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVEmps)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EmpsAddButton)).EndInit();
             this.ResumeLayout(false);
 
         }

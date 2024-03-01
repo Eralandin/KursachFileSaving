@@ -16,7 +16,7 @@ namespace KursachFileSaving.Models.Classes
         private string login;
         private string password;
         private string email;
-        private int jobCode;
+        private string jobCode;
         private string salt;
 
         public int EmpCode
@@ -97,10 +97,14 @@ namespace KursachFileSaving.Models.Classes
             }
         }
 
-        public int JobCode
+        public string JobCode
         {
             get { return jobCode; }
-            set { jobCode = value; }
+            set 
+            {   if (string.IsNullOrEmpty(value))
+                    throw new ArgumentException("Должность должна быть присвоена каждому сотруднику!");
+                jobCode = value; 
+            }
         }
 
         public string Salt

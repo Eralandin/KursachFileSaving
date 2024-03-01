@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static KursachFileSaving.View.Forms.JobsControlForms.JobsControl;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace KursachFileSaving.View.Forms.EmpControlForms
 {
@@ -29,7 +30,10 @@ namespace KursachFileSaving.View.Forms.EmpControlForms
             ShowJobs(jobsList);
             foreach (Jobs job in jobsList)
             {
-                JobCodeCombobox.Items.Add(job.JobCode);
+                if (job.jobName != "Системный администратор") 
+                {
+                    JobCodeCombobox.Items.Add(job.JobCode + ". " + job.jobName);
+                }
             }
             comboBox1.Items.Add(0);
             foreach (Blocks block in blocksList)

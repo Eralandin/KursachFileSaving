@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WTControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVWTs = new System.Windows.Forms.DataGridView();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.WorkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BotWTsPanel = new System.Windows.Forms.Panel();
+            this.WTsAddButton = new KursachFileSaving.View.Parts.CustomerButton();
             this.WTSearchLabel = new System.Windows.Forms.Label();
             this.WTBotLabel = new System.Windows.Forms.Label();
             this.WTSearchTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WorkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.WTsAddButton = new KursachFileSaving.View.Parts.CustomerButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGVWTs)).BeginInit();
             this.BotWTsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WTsAddButton)).BeginInit();
@@ -87,50 +87,6 @@
             this.DGVWTs.TabIndex = 11;
             this.DGVWTs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVWTs_CellContentClick);
             // 
-            // Number
-            // 
-            this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Number.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Number.HeaderText = "Номер";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            this.Number.Width = 70;
-            // 
-            // Code
-            // 
-            this.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Code.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Code.HeaderText = "Код";
-            this.Code.Name = "Code";
-            this.Code.ReadOnly = true;
-            this.Code.Width = 55;
-            // 
-            // WorkName
-            // 
-            this.WorkName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.WorkName.DefaultCellStyle = dataGridViewCellStyle4;
-            this.WorkName.HeaderText = "Наименование";
-            this.WorkName.Name = "WorkName";
-            this.WorkName.ReadOnly = true;
-            this.WorkName.Width = 119;
-            // 
-            // Comm
-            // 
-            this.Comm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Comm.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Comm.HeaderText = "Комментарий";
-            this.Comm.Name = "Comm";
-            this.Comm.ReadOnly = true;
-            // 
             // BotWTsPanel
             // 
             this.BotWTsPanel.BackColor = System.Drawing.Color.ForestGreen;
@@ -143,6 +99,19 @@
             this.BotWTsPanel.Name = "BotWTsPanel";
             this.BotWTsPanel.Size = new System.Drawing.Size(1050, 35);
             this.BotWTsPanel.TabIndex = 10;
+            // 
+            // WTsAddButton
+            // 
+            this.WTsAddButton.Image = global::KursachFileSaving.Properties.Resources.PlusNormal;
+            this.WTsAddButton.ImageHover = global::KursachFileSaving.Properties.Resources.PlusHover;
+            this.WTsAddButton.ImageNormal = global::KursachFileSaving.Properties.Resources.PlusNormal;
+            this.WTsAddButton.Location = new System.Drawing.Point(1019, 4);
+            this.WTsAddButton.Name = "WTsAddButton";
+            this.WTsAddButton.Size = new System.Drawing.Size(28, 28);
+            this.WTsAddButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.WTsAddButton.TabIndex = 10;
+            this.WTsAddButton.TabStop = false;
+            this.WTsAddButton.Click += new System.EventHandler(this.WTsAddButton_Click);
             // 
             // WTSearchLabel
             // 
@@ -186,7 +155,6 @@
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 5;
             // 
             // dataGridViewImageColumn2
             // 
@@ -200,7 +168,53 @@
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Width = 5;
+            // 
+            // Number
+            // 
+            this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Number.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Number.HeaderText = "Номер";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Number.Width = 51;
+            // 
+            // Code
+            // 
+            this.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Code.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Code.HeaderText = "Код";
+            this.Code.Name = "Code";
+            this.Code.ReadOnly = true;
+            this.Code.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Code.Width = 36;
+            // 
+            // WorkName
+            // 
+            this.WorkName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.WorkName.DefaultCellStyle = dataGridViewCellStyle4;
+            this.WorkName.HeaderText = "Наименование";
+            this.WorkName.Name = "WorkName";
+            this.WorkName.ReadOnly = true;
+            this.WorkName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Comm
+            // 
+            this.Comm.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Comm.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Comm.HeaderText = "Комментарий";
+            this.Comm.Name = "Comm";
+            this.Comm.ReadOnly = true;
+            this.Comm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Edit
             // 
@@ -228,19 +242,6 @@
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
             this.Delete.Width = 5;
-            // 
-            // WTsAddButton
-            // 
-            this.WTsAddButton.Image = global::KursachFileSaving.Properties.Resources.PlusNormal;
-            this.WTsAddButton.ImageHover = global::KursachFileSaving.Properties.Resources.PlusHover;
-            this.WTsAddButton.ImageNormal = global::KursachFileSaving.Properties.Resources.PlusNormal;
-            this.WTsAddButton.Location = new System.Drawing.Point(1019, 4);
-            this.WTsAddButton.Name = "WTsAddButton";
-            this.WTsAddButton.Size = new System.Drawing.Size(28, 28);
-            this.WTsAddButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.WTsAddButton.TabIndex = 10;
-            this.WTsAddButton.TabStop = false;
-            this.WTsAddButton.Click += new System.EventHandler(this.WTsAddButton_Click);
             // 
             // WTControl
             // 

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KursachFileSaving.View.Forms.LoginForms;
 
 
 namespace KursachFileSaving
@@ -19,7 +20,12 @@ namespace KursachFileSaving
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            LoginForm loginForm;
+            MainForm mainForm = new MainForm(); // Создаем экземпляр MainForm
+            loginForm = new LoginForm(mainForm); // Создаем экземпляр LoginForm и передаем в конструктор ссылку на MainForm
+
+            // Запускаем приложение с LoginForm
+            Application.Run(loginForm);
         }
     }
 }

@@ -17,6 +17,7 @@ using KursachFileSaving.View.Forms.POControlForms;
 using KursachFileSaving.View.Forms.BlocksControlForms;
 using KursachFileSaving.View.Forms.EmpControlForms;
 using KursachFileSaving.View.Forms.AppsControlForms;
+using KursachFileSaving.View.Forms.JournalControlForms;
 
 namespace KursachFileSaving.View.Forms
 {
@@ -28,25 +29,17 @@ namespace KursachFileSaving.View.Forms
             InitializeComponent();
             SetStyle(ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
             _presenter = new MainFormPresenter(this);
-            LoadDataFromJson();
+            Load?.Invoke(this,EventArgs.Empty);
         }
-        private void LoadDataFromJson()
-        {
-            if (!File.Exists("data.json"))
-            {
-                // Создаем пустой файл data.json
-                JsonFileManager.InitializeDataIfFileNotExists();
-            }
-            // Загрузка данных из файла data.json
-            var (apps, blocks, employees, jobs, journal, po, workTypesModel) = JsonFileManager.LoadData();
-
-            // Передача данных презентеру
-            _presenter.InitializeData(apps, blocks, employees, jobs, journal, po, workTypesModel);
-        }
+        public event EventHandler Load;
+        
 
         private void MainFormClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Закрыть программу?", "Закрытие программы", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void MainFormMinimize_Click(object sender, EventArgs e)
@@ -110,6 +103,16 @@ namespace KursachFileSaving.View.Forms
             NSTUMainLogo.Visible = false;
             SuspendLayout();
             _presenter.OpenChildForm(new AppsControl(apps), panel2);
+            ResumeLayout(true);
+        }
+
+        private void JournalMainButton_Click(object sender, EventArgs e)
+        {
+            List<Journal> journal = JsonFileManager.LoadJournal();
+            NSTUMainLogo.Visible = false;
+            NSTUMainLogo.Visible = false;
+            SuspendLayout();
+            _presenter.OpenChildForm(new JournalControl(journal), panel2);
             ResumeLayout(true);
         }
     }

@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVPOs = new System.Windows.Forms.DataGridView();
+            this.BotPOsPanel = new System.Windows.Forms.Panel();
+            this.POsAddButton = new KursachFileSaving.View.Parts.CustomerButton();
+            this.POsSearchLabel = new System.Windows.Forms.Label();
+            this.POsBotLabel = new System.Windows.Forms.Label();
+            this.POsSearchTextBox = new System.Windows.Forms.TextBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WorkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BlockCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.BotPOsPanel = new System.Windows.Forms.Panel();
-            this.POsSearchLabel = new System.Windows.Forms.Label();
-            this.POsBotLabel = new System.Windows.Forms.Label();
-            this.POsSearchTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.POsAddButton = new KursachFileSaving.View.Parts.CustomerButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGVPOs)).BeginInit();
             this.BotPOsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.POsAddButton)).BeginInit();
@@ -61,14 +61,14 @@
             this.DGVPOs.AllowUserToAddRows = false;
             this.DGVPOs.AllowUserToDeleteRows = false;
             this.DGVPOs.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGVPOs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVPOs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGVPOs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVPOs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Number,
@@ -86,74 +86,6 @@
             this.DGVPOs.TabIndex = 11;
             this.DGVPOs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVPOs_CellContentClick);
             // 
-            // Number
-            // 
-            this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Number.DefaultCellStyle = dataGridViewCellStyle34;
-            this.Number.HeaderText = "Номер";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            this.Number.Width = 70;
-            // 
-            // Code
-            // 
-            this.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Code.DefaultCellStyle = dataGridViewCellStyle35;
-            this.Code.HeaderText = "Код";
-            this.Code.Name = "Code";
-            this.Code.ReadOnly = true;
-            this.Code.Width = 55;
-            // 
-            // WorkName
-            // 
-            this.WorkName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.WorkName.DefaultCellStyle = dataGridViewCellStyle36;
-            this.WorkName.HeaderText = "Наименование";
-            this.WorkName.Name = "WorkName";
-            this.WorkName.ReadOnly = true;
-            // 
-            // BlockCode
-            // 
-            this.BlockCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.BlockCode.HeaderText = "Код блока";
-            this.BlockCode.Name = "BlockCode";
-            this.BlockCode.ReadOnly = true;
-            this.BlockCode.Width = 93;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle37.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle37.NullValue")));
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Edit.DefaultCellStyle = dataGridViewCellStyle37;
-            this.Edit.HeaderText = "";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 5;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle38.NullValue")));
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle38;
-            this.Delete.HeaderText = "";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 5;
-            // 
             // BotPOsPanel
             // 
             this.BotPOsPanel.BackColor = System.Drawing.Color.ForestGreen;
@@ -166,6 +98,19 @@
             this.BotPOsPanel.Name = "BotPOsPanel";
             this.BotPOsPanel.Size = new System.Drawing.Size(1050, 35);
             this.BotPOsPanel.TabIndex = 10;
+            // 
+            // POsAddButton
+            // 
+            this.POsAddButton.Image = global::KursachFileSaving.Properties.Resources.PlusNormal;
+            this.POsAddButton.ImageHover = global::KursachFileSaving.Properties.Resources.PlusHover;
+            this.POsAddButton.ImageNormal = global::KursachFileSaving.Properties.Resources.PlusNormal;
+            this.POsAddButton.Location = new System.Drawing.Point(1019, 4);
+            this.POsAddButton.Name = "POsAddButton";
+            this.POsAddButton.Size = new System.Drawing.Size(28, 28);
+            this.POsAddButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.POsAddButton.TabIndex = 10;
+            this.POsAddButton.TabStop = false;
+            this.POsAddButton.Click += new System.EventHandler(this.POsAddButton_Click);
             // 
             // POsSearchLabel
             // 
@@ -201,9 +146,9 @@
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle39.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle39.NullValue")));
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle7.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle7.NullValue")));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewImageColumn1.HeaderText = "";
             this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
             this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
@@ -213,28 +158,87 @@
             // dataGridViewImageColumn2
             // 
             this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle40.NullValue")));
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle8.NullValue")));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewImageColumn2.HeaderText = "";
             this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
             // 
-            // POsAddButton
+            // Number
             // 
-            this.POsAddButton.Image = global::KursachFileSaving.Properties.Resources.PlusNormal;
-            this.POsAddButton.ImageHover = global::KursachFileSaving.Properties.Resources.PlusHover;
-            this.POsAddButton.ImageNormal = global::KursachFileSaving.Properties.Resources.PlusNormal;
-            this.POsAddButton.Location = new System.Drawing.Point(1019, 4);
-            this.POsAddButton.Name = "POsAddButton";
-            this.POsAddButton.Size = new System.Drawing.Size(28, 28);
-            this.POsAddButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.POsAddButton.TabIndex = 10;
-            this.POsAddButton.TabStop = false;
-            this.POsAddButton.Click += new System.EventHandler(this.POsAddButton_Click);
+            this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Number.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Number.HeaderText = "Номер";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Number.Width = 51;
+            // 
+            // Code
+            // 
+            this.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Code.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Code.HeaderText = "Код";
+            this.Code.Name = "Code";
+            this.Code.ReadOnly = true;
+            this.Code.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Code.Width = 36;
+            // 
+            // WorkName
+            // 
+            this.WorkName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.WorkName.DefaultCellStyle = dataGridViewCellStyle4;
+            this.WorkName.HeaderText = "Наименование";
+            this.WorkName.Name = "WorkName";
+            this.WorkName.ReadOnly = true;
+            this.WorkName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // BlockCode
+            // 
+            this.BlockCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.BlockCode.HeaderText = "Код блока";
+            this.BlockCode.Name = "BlockCode";
+            this.BlockCode.ReadOnly = true;
+            this.BlockCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.BlockCode.Width = 74;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle5.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle5.NullValue")));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Edit.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Edit.HeaderText = "";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 5;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle6.NullValue")));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Delete.HeaderText = "";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 5;
             // 
             // POControl
             // 

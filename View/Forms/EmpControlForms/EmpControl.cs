@@ -71,7 +71,6 @@ namespace KursachFileSaving.View.Forms.EmpControlForms
                         {
                             _presenter.RowToDelete = e.RowIndex;
                             DeleteEmp?.Invoke(sender, e);
-                            MessageForm?.Invoke(this, "Сотрудник успешно удалён!");
                         }
                     }
                 }
@@ -90,6 +89,11 @@ namespace KursachFileSaving.View.Forms.EmpControlForms
         private void EmpsSearchTextBox_TextChanged(object sender, EventArgs e)
         {
             SearchTextChanged?.Invoke(this, new SearchEventArgs(EmpsSearchTextBox.Text));
+        }
+        public void OperationConfirmed()
+        {
+            OperationConfirmedForm ocf = new OperationConfirmedForm();
+            ocf.ShowDialog();
         }
     }
 }

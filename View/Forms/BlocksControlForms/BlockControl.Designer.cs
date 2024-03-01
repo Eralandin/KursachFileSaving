@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,9 +41,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BlockControl));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVBlocks = new System.Windows.Forms.DataGridView();
+            this.BotBlocksPanel = new System.Windows.Forms.Panel();
+            this.BlocksAddButton = new KursachFileSaving.View.Parts.CustomerButton();
+            this.BlocksSearchLabel = new System.Windows.Forms.Label();
+            this.BlocksBotLabel = new System.Windows.Forms.Label();
+            this.BlocksSearchTextBox = new System.Windows.Forms.TextBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Motherboard = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,13 +58,6 @@
             this.POCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.BotBlocksPanel = new System.Windows.Forms.Panel();
-            this.BlocksAddButton = new KursachFileSaving.View.Parts.CustomerButton();
-            this.BlocksSearchLabel = new System.Windows.Forms.Label();
-            this.BlocksBotLabel = new System.Windows.Forms.Label();
-            this.BlocksSearchTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVBlocks)).BeginInit();
             this.BotBlocksPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BlocksAddButton)).BeginInit();
@@ -95,110 +95,6 @@
             this.DGVBlocks.Size = new System.Drawing.Size(1050, 531);
             this.DGVBlocks.TabIndex = 11;
             this.DGVBlocks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVBlocks_CellContentClick);
-            // 
-            // Number
-            // 
-            this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Number.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Number.HeaderText = "Номер";
-            this.Number.Name = "Number";
-            this.Number.ReadOnly = true;
-            this.Number.Width = 70;
-            // 
-            // Code
-            // 
-            this.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Code.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Code.HeaderText = "Код";
-            this.Code.Name = "Code";
-            this.Code.ReadOnly = true;
-            this.Code.Width = 55;
-            // 
-            // Motherboard
-            // 
-            this.Motherboard.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Motherboard.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Motherboard.HeaderText = "Материнская плата";
-            this.Motherboard.Name = "Motherboard";
-            this.Motherboard.ReadOnly = true;
-            this.Motherboard.Width = 136;
-            // 
-            // RAM
-            // 
-            this.RAM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.RAM.DefaultCellStyle = dataGridViewCellStyle5;
-            this.RAM.HeaderText = "RAM";
-            this.RAM.Name = "RAM";
-            this.RAM.ReadOnly = true;
-            this.RAM.Width = 58;
-            // 
-            // Videocard
-            // 
-            this.Videocard.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Videocard.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Videocard.HeaderText = "Видеокарта";
-            this.Videocard.Name = "Videocard";
-            this.Videocard.ReadOnly = true;
-            this.Videocard.Width = 103;
-            // 
-            // BlockName
-            // 
-            this.BlockName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.BlockName.DefaultCellStyle = dataGridViewCellStyle7;
-            this.BlockName.HeaderText = "Имя блока";
-            this.BlockName.Name = "BlockName";
-            this.BlockName.ReadOnly = true;
-            // 
-            // POCode
-            // 
-            this.POCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.POCode.DefaultCellStyle = dataGridViewCellStyle8;
-            this.POCode.HeaderText = "Код ПО";
-            this.POCode.Name = "POCode";
-            this.POCode.ReadOnly = true;
-            this.POCode.Width = 70;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle9.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle9.NullValue")));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Edit.DefaultCellStyle = dataGridViewCellStyle9;
-            this.Edit.HeaderText = "";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 5;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle10.NullValue")));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Firebrick;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Delete.HeaderText = "";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 5;
             // 
             // BotBlocksPanel
             // 
@@ -281,6 +177,117 @@
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.ReadOnly = true;
+            // 
+            // Number
+            // 
+            this.Number.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Number.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Number.HeaderText = "Номер";
+            this.Number.Name = "Number";
+            this.Number.ReadOnly = true;
+            this.Number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Number.Width = 51;
+            // 
+            // Code
+            // 
+            this.Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Code.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Code.HeaderText = "Код";
+            this.Code.Name = "Code";
+            this.Code.ReadOnly = true;
+            this.Code.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Code.Width = 36;
+            // 
+            // Motherboard
+            // 
+            this.Motherboard.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Motherboard.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Motherboard.HeaderText = "Материнская плата";
+            this.Motherboard.Name = "Motherboard";
+            this.Motherboard.ReadOnly = true;
+            this.Motherboard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Motherboard.Width = 117;
+            // 
+            // RAM
+            // 
+            this.RAM.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.RAM.DefaultCellStyle = dataGridViewCellStyle5;
+            this.RAM.HeaderText = "RAM";
+            this.RAM.Name = "RAM";
+            this.RAM.ReadOnly = true;
+            this.RAM.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.RAM.Width = 39;
+            // 
+            // Videocard
+            // 
+            this.Videocard.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Videocard.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Videocard.HeaderText = "Видеокарта";
+            this.Videocard.Name = "Videocard";
+            this.Videocard.ReadOnly = true;
+            this.Videocard.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Videocard.Width = 84;
+            // 
+            // BlockName
+            // 
+            this.BlockName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.BlockName.DefaultCellStyle = dataGridViewCellStyle7;
+            this.BlockName.HeaderText = "Имя блока";
+            this.BlockName.Name = "BlockName";
+            this.BlockName.ReadOnly = true;
+            this.BlockName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // POCode
+            // 
+            this.POCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.POCode.DefaultCellStyle = dataGridViewCellStyle8;
+            this.POCode.HeaderText = "Код ПО";
+            this.POCode.Name = "POCode";
+            this.POCode.ReadOnly = true;
+            this.POCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.POCode.Width = 51;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle9.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle9.NullValue")));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Edit.DefaultCellStyle = dataGridViewCellStyle9;
+            this.Edit.HeaderText = "";
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 5;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle10.NullValue")));
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Firebrick;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Delete.HeaderText = "";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 5;
             // 
             // BlockControl
             // 

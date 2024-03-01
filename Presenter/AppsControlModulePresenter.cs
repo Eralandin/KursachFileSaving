@@ -43,7 +43,7 @@ namespace KursachFileSaving.Presenter
                     Month = int.Parse(_view.Month),
                     Year = int.Parse(_view.Year),
                     BlockCode = int.Parse(_view.BlockCode),
-                    WorkType = int.Parse(_view.WorkType.Split(new string[] { ". " }, StringSplitOptions.None)[0])
+                    WorkType = _view.WorkType.Split(new string[] { ". " }, StringSplitOptions.None)[1]
                 };
                 appsData.Add(app);
 
@@ -87,7 +87,7 @@ namespace KursachFileSaving.Presenter
                     Month = int.Parse(_view.Month),
                     Year = int.Parse(_view.Year),
                     BlockCode = int.Parse(_view.BlockCode),
-                    WorkType = int.Parse(_view.WorkType.Split(new string[] { ". " }, StringSplitOptions.None)[0])
+                    WorkType = _view.WorkType.Split(new string[] { ". " }, StringSplitOptions.None)[1]
                 };
                 appsData.RemoveAt(RowToEdit);
                 appsData.Insert(RowToEdit, app);
